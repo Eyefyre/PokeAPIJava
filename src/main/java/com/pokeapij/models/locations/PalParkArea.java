@@ -41,29 +41,29 @@ public class PalParkArea {
         return "PalParkArea{" + "id=" + id + ", name=" + name + ", names=" + names + ", pokemon_encounters=" + pokemon_encounters + '}';
     }
 
-}
+    public class PalParkEncounterSpecies {
 
-class PalParkEncounterSpecies {
+        int base_score;
+        int rate;
+        NamedAPIResource pokemon_species;
 
-    int base_score;
-    int rate;
-    NamedAPIResource pokemon_species;
+        public int getBase_score() {
+            return base_score;
+        }
 
-    public int getBase_score() {
-        return base_score;
-    }
+        public int getRate() {
+            return rate;
+        }
 
-    public int getRate() {
-        return rate;
-    }
+        public NamedAPIResource getPokemon_species() {
+            return pokemon_species;
+        }
 
-    public NamedAPIResource getPokemon_species() {
-        return pokemon_species;
-    }
+        @Override
+        public String toString() {
+            return "PalParkEncounterSpecies{" + "base_score=" + base_score + ", rate=" + rate + ", pokemon_species=" + pokemon_species + '}';
+        }
 
-    @Override
-    public String toString() {
-        return "PalParkEncounterSpecies{" + "base_score=" + base_score + ", rate=" + rate + ", pokemon_species=" + pokemon_species + '}';
     }
 
 }

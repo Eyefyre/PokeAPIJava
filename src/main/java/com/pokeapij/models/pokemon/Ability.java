@@ -68,54 +68,54 @@ public class Ability {
         return "Ability{" + "id=" + id + ", name=" + name + ", is_main_series=" + is_main_series + ", generation=" + generation + ", names=" + names + ", effect_entries=" + effect_entries + ", effect_changes=" + effect_changes + ", flavor_text_entries=" + flavor_text_entries + ", pokemon=" + pokemon + '}';
     }
 
-}
+    public class AbilityFlavorText {
 
-class AbilityFlavorText {
+        String flavor_text;
+        NamedAPIResource language;
+        NamedAPIResource version_group;
 
-    String flavor_text;
-    NamedAPIResource language;
-    NamedAPIResource version_group;
+        public String getFlavor_text() {
+            return flavor_text;
+        }
 
-    public String getFlavor_text() {
-        return flavor_text;
+        public NamedAPIResource getLanguage() {
+            return language;
+        }
+
+        public NamedAPIResource getVersion_group() {
+            return version_group;
+        }
+
+        @Override
+        public String toString() {
+            return "AbilityFlavorText{" + "flavor_text=" + flavor_text + ", language=" + language + ", version_group=" + version_group + '}';
+        }
+
     }
 
-    public NamedAPIResource getLanguage() {
-        return language;
-    }
+    public class AbilityPokemon {
 
-    public NamedAPIResource getVersion_group() {
-        return version_group;
-    }
+        boolean is_hidden;
+        int slot;
+        NamedAPIResource pokemon;
 
-    @Override
-    public String toString() {
-        return "AbilityFlavorText{" + "flavor_text=" + flavor_text + ", language=" + language + ", version_group=" + version_group + '}';
-    }
+        public boolean isIs_hidden() {
+            return is_hidden;
+        }
 
-}
+        public int getSlot() {
+            return slot;
+        }
 
-class AbilityPokemon {
+        public NamedAPIResource getPokemon() {
+            return pokemon;
+        }
 
-    boolean is_hidden;
-    int slot;
-    NamedAPIResource pokemon;
+        @Override
+        public String toString() {
+            return "AbilityPokemon{" + "is_hidden=" + is_hidden + ", slot=" + slot + ", pokemon=" + pokemon + '}';
+        }
 
-    public boolean isIs_hidden() {
-        return is_hidden;
-    }
-
-    public int getSlot() {
-        return slot;
-    }
-
-    public NamedAPIResource getPokemon() {
-        return pokemon;
-    }
-
-    @Override
-    public String toString() {
-        return "AbilityPokemon{" + "is_hidden=" + is_hidden + ", slot=" + slot + ", pokemon=" + pokemon + '}';
     }
 
 }

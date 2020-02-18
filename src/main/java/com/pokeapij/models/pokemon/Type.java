@@ -62,64 +62,64 @@ public class Type {
         return "Type{" + "id=" + id + ", name=" + name + ", damage_relations=" + damage_relations + ", game_indices=" + game_indices + ", move_damage_class=" + move_damage_class + ", names=" + names + ", pokemon=" + pokemon + ", moves=" + moves + '}';
     }
 
-}
+    public class TypePokemon {
 
-class TypePokemon {
+        int slot;
+        NamedAPIResource pokemon;
 
-    int slot;
-    NamedAPIResource pokemon;
+        public int getSlot() {
+            return slot;
+        }
 
-    public int getSlot() {
-        return slot;
+        public NamedAPIResource getPokemon() {
+            return pokemon;
+        }
+
+        @Override
+        public String toString() {
+            return "TypePokemon{" + "slot=" + slot + ", pokemon=" + pokemon + '}';
+        }
+
     }
 
-    public NamedAPIResource getPokemon() {
-        return pokemon;
-    }
+    public class TypeRelations {
 
-    @Override
-    public String toString() {
-        return "TypePokemon{" + "slot=" + slot + ", pokemon=" + pokemon + '}';
-    }
+        ArrayList<NamedAPIResource> no_damage_to;
+        ArrayList<NamedAPIResource> half_damage_to;
+        ArrayList<NamedAPIResource> double_damage_to;
+        ArrayList<NamedAPIResource> no_damage_from;
+        ArrayList<NamedAPIResource> half_damage_from;
+        ArrayList<NamedAPIResource> double_damage_from;
 
-}
+        public ArrayList<NamedAPIResource> getNo_damage_to() {
+            return no_damage_to;
+        }
 
-class TypeRelations {
+        public ArrayList<NamedAPIResource> getHalf_damage_to() {
+            return half_damage_to;
+        }
 
-    ArrayList<NamedAPIResource> no_damage_to;
-    ArrayList<NamedAPIResource> half_damage_to;
-    ArrayList<NamedAPIResource> double_damage_to;
-    ArrayList<NamedAPIResource> no_damage_from;
-    ArrayList<NamedAPIResource> half_damage_from;
-    ArrayList<NamedAPIResource> double_damage_from;
+        public ArrayList<NamedAPIResource> getDouble_damage_to() {
+            return double_damage_to;
+        }
 
-    public ArrayList<NamedAPIResource> getNo_damage_to() {
-        return no_damage_to;
-    }
+        public ArrayList<NamedAPIResource> getNo_damage_from() {
+            return no_damage_from;
+        }
 
-    public ArrayList<NamedAPIResource> getHalf_damage_to() {
-        return half_damage_to;
-    }
+        public ArrayList<NamedAPIResource> getHalf_damage_from() {
+            return half_damage_from;
+        }
 
-    public ArrayList<NamedAPIResource> getDouble_damage_to() {
-        return double_damage_to;
-    }
+        public ArrayList<NamedAPIResource> getDouble_damage_from() {
+            return double_damage_from;
+        }
 
-    public ArrayList<NamedAPIResource> getNo_damage_from() {
-        return no_damage_from;
-    }
+        @Override
+        public String toString() {
+            return "TypeRelations{" + "no_damage_to=" + no_damage_to + ", half_damage_to=" + half_damage_to + ", double_damage_to=" + double_damage_to + ", no_damage_from=" + no_damage_from + ", half_damage_from=" + half_damage_from + ", double_damage_from=" + double_damage_from + '}';
+        }
 
-    public ArrayList<NamedAPIResource> getHalf_damage_from() {
-        return half_damage_from;
-    }
-
-    public ArrayList<NamedAPIResource> getDouble_damage_from() {
-        return double_damage_from;
-    }
-
-    @Override
-    public String toString() {
-        return "TypeRelations{" + "no_damage_to=" + no_damage_to + ", half_damage_to=" + half_damage_to + ", double_damage_to=" + double_damage_to + ", no_damage_from=" + no_damage_from + ", half_damage_from=" + half_damage_from + ", double_damage_from=" + double_damage_from + '}';
     }
 
 }

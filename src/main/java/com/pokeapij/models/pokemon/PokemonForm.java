@@ -86,34 +86,34 @@ public class PokemonForm {
         return "PokemonForm{" + "id=" + id + ", name=" + name + ", order=" + order + ", form_order=" + form_order + ", is_default=" + is_default + ", is_battle_only=" + is_battle_only + ", is_mega=" + is_mega + ", form_name=" + form_name + ", pokemon=" + pokemon + ", sprites=" + sprites + ", version_group=" + version_group + ", names=" + names + ", form_names=" + form_names + '}';
     }
 
-}
+    public class PokemonFormSprites {
 
-class PokemonFormSprites {
+        String front_default;
+        String front_shiny;
+        String back_default;
+        String back_shiny;
 
-    String front_default;
-    String front_shiny;
-    String back_default;
-    String back_shiny;
+        public String getFront_default() {
+            return front_default;
+        }
 
-    public String getFront_default() {
-        return front_default;
-    }
+        public String getFront_shiny() {
+            return front_shiny;
+        }
 
-    public String getFront_shiny() {
-        return front_shiny;
-    }
+        public String getBack_default() {
+            return back_default;
+        }
 
-    public String getBack_default() {
-        return back_default;
-    }
+        public String getBack_shiny() {
+            return back_shiny;
+        }
 
-    public String getBack_shiny() {
-        return back_shiny;
-    }
+        @Override
+        public String toString() {
+            return "PokemonFormSprites{" + "front_default=" + front_default + ", front_shiny=" + front_shiny + ", back_default=" + back_default + ", back_shiny=" + back_shiny + '}';
+        }
 
-    @Override
-    public String toString() {
-        return "PokemonFormSprites{" + "front_default=" + front_default + ", front_shiny=" + front_shiny + ", back_default=" + back_default + ", back_shiny=" + back_shiny + '}';
     }
 
 }

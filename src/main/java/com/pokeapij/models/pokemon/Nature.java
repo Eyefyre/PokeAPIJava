@@ -66,49 +66,49 @@ public class Nature {
         return "Nature{" + "id=" + id + ", name=" + name + ", decreased_stat=" + decreased_stat + ", increased_stat=" + increased_stat + ", hates_flavor=" + hates_flavor + ", likes_flavor=" + likes_flavor + ", pokeathlon_stat_changes=" + pokeathlon_stat_changes + ", move_battle_style_preferences=" + move_battle_style_preferences + ", names=" + names + '}';
     }
 
-}
+    public class NatureStatChange {
 
-class NatureStatChange {
+        int max_change;
+        NamedAPIResource pokeathlon_stat;
 
-    int max_change;
-    NamedAPIResource pokeathlon_stat;
+        public int getMax_change() {
+            return max_change;
+        }
 
-    public int getMax_change() {
-        return max_change;
+        public NamedAPIResource getPokeathlon_stat() {
+            return pokeathlon_stat;
+        }
+
+        @Override
+        public String toString() {
+            return "NatureStatChange{" + "max_change=" + max_change + ", pokeathlon_stat=" + pokeathlon_stat + '}';
+        }
+
     }
 
-    public NamedAPIResource getPokeathlon_stat() {
-        return pokeathlon_stat;
-    }
+    public class MoveBattleStylePreference {
 
-    @Override
-    public String toString() {
-        return "NatureStatChange{" + "max_change=" + max_change + ", pokeathlon_stat=" + pokeathlon_stat + '}';
-    }
+        int low_hp_preference;
+        int high_hp_preference;
+        NamedAPIResource move_battle_style;
 
-}
+        public int getLow_hp_preference() {
+            return low_hp_preference;
+        }
 
-class MoveBattleStylePreference {
+        public int getHigh_hp_preference() {
+            return high_hp_preference;
+        }
 
-    int low_hp_preference;
-    int high_hp_preference;
-    NamedAPIResource move_battle_style;
+        public NamedAPIResource getMove_battle_style() {
+            return move_battle_style;
+        }
 
-    public int getLow_hp_preference() {
-        return low_hp_preference;
-    }
+        @Override
+        public String toString() {
+            return "MoveBattleStylePreference{" + "low_hp_preference=" + low_hp_preference + ", high_hp_preference=" + high_hp_preference + ", move_battle_style=" + move_battle_style + '}';
+        }
 
-    public int getHigh_hp_preference() {
-        return high_hp_preference;
-    }
-
-    public NamedAPIResource getMove_battle_style() {
-        return move_battle_style;
-    }
-
-    @Override
-    public String toString() {
-        return "MoveBattleStylePreference{" + "low_hp_preference=" + low_hp_preference + ", high_hp_preference=" + high_hp_preference + ", move_battle_style=" + move_battle_style + '}';
     }
 
 }

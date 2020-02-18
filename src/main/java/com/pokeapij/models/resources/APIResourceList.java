@@ -30,7 +30,7 @@ public class APIResourceList {
         return previous;
     }
 
-    public ArrayList<APIResource> getResuls() {
+    public ArrayList<APIResource> getResults() {
         return results;
     }
 

@@ -62,31 +62,29 @@ public class Pokedex {
         return "Pokedex{" + "id=" + id + ", name=" + name + ", is_main_series=" + is_main_series + ", descriptions=" + descriptions + ", names=" + names + ", pokemon_entries=" + pokemon_entries + ", region=" + region + ", version_groups=" + version_groups + '}';
     }
 
-}
+    public class PokemonEntry {
 
-class PokemonEntry {
+        int entry_number;
+        NamedAPIResource pokemon_species;
 
-    int entry_number;
-    NamedAPIResource pokemon_species;
+        public int getEntry_number() {
+            return entry_number;
+        }
 
-    public int getEntry_number() {
-        return entry_number;
+        public NamedAPIResource getPokemon_species() {
+            return pokemon_species;
+        }
+
+        public PokemonEntry(int entry_number, NamedAPIResource pokemon_species) {
+            this.entry_number = entry_number;
+            this.pokemon_species = pokemon_species;
+        }
+
+        @Override
+        public String toString() {
+            return "PokemonEntry{" + "entry_number=" + entry_number + ", pokemon_species=" + pokemon_species + '}';
+        }
+
     }
-
-    public NamedAPIResource getPokemon_species() {
-        return pokemon_species;
-    }
-
-    public PokemonEntry(int entry_number, NamedAPIResource pokemon_species) {
-        this.entry_number = entry_number;
-        this.pokemon_species = pokemon_species;
-    }
-
-    @Override
-    public String toString() {
-        return "PokemonEntry{" + "entry_number=" + entry_number + ", pokemon_species=" + pokemon_species + '}';
-    }
-    
-    
 
 }

@@ -149,89 +149,89 @@ public class PokemonSpecies {
         return "PokemonSpecies{" + "id=" + id + ", name=" + name + ", order=" + order + ", gender_rate=" + gender_rate + ", capture_rate=" + capture_rate + ", base_happiness=" + base_happiness + ", is_baby=" + is_baby + ", hatch_counter=" + hatch_counter + ", has_gender_differences=" + has_gender_differences + ", forms_switchable=" + forms_switchable + ", growth_rate=" + growth_rate + ", pokedex_numbers=" + pokedex_numbers + ", egg_groups=" + egg_groups + ", color=" + color + ", shape=" + shape + ", evolves_from_species=" + evolves_from_species + ", evolution_chain=" + evolution_chain + ", habitat=" + habitat + ", generation=" + generation + ", names=" + names + ", pal_park_encounters=" + pal_park_encounters + ", flavor_text_entries=" + flavor_text_entries + ", form_descriptions=" + form_descriptions + ", genera=" + genera + ", varieties=" + varieties + '}';
     }
 
-}
+    public class PokemonSpeciesDexEntry {
 
-class PokemonSpeciesDexEntry {
+        int entry_number;
+        NamedAPIResource language;
 
-    int entry_number;
-    NamedAPIResource language;
+        public int getEntry_number() {
+            return entry_number;
+        }
 
-    public int getEntry_number() {
-        return entry_number;
+        public NamedAPIResource getLanguage() {
+            return language;
+        }
+
+        @Override
+        public String toString() {
+            return "PokemonSpeciesDexEntry{" + "entry_number=" + entry_number + ", language=" + language + '}';
+        }
+
     }
 
-    public NamedAPIResource getLanguage() {
-        return language;
+    public class PalParkEncounterArea {
+
+        int base_score;
+        int rate;
+        NamedAPIResource area;
+
+        public int getBase_score() {
+            return base_score;
+        }
+
+        public int getRate() {
+            return rate;
+        }
+
+        public NamedAPIResource getArea() {
+            return area;
+        }
+
+        @Override
+        public String toString() {
+            return "PalParkEncounterArea{" + "base_score=" + base_score + ", rate=" + rate + ", area=" + area + '}';
+        }
+
     }
 
-    @Override
-    public String toString() {
-        return "PokemonSpeciesDexEntry{" + "entry_number=" + entry_number + ", language=" + language + '}';
+    public class Genus {
+
+        String genus;
+        NamedAPIResource language;
+
+        public String getGenus() {
+            return genus;
+        }
+
+        public NamedAPIResource getLanguage() {
+            return language;
+        }
+
+        @Override
+        public String toString() {
+            return "Genus{" + "genus=" + genus + ", language=" + language + '}';
+        }
+
     }
 
-}
+    public class PokemonSpeciesVariety {
 
-class PalParkEncounterArea {
+        boolean is_default;
+        NamedAPIResource pokemon;
 
-    int base_score;
-    int rate;
-    NamedAPIResource area;
+        public boolean isIs_default() {
+            return is_default;
+        }
 
-    public int getBase_score() {
-        return base_score;
-    }
+        public NamedAPIResource getPokemon() {
+            return pokemon;
+        }
 
-    public int getRate() {
-        return rate;
-    }
+        @Override
+        public String toString() {
+            return "PokemonSpeciesVariety{" + "is_default=" + is_default + ", pokemon=" + pokemon + '}';
+        }
 
-    public NamedAPIResource getArea() {
-        return area;
-    }
-
-    @Override
-    public String toString() {
-        return "PalParkEncounterArea{" + "base_score=" + base_score + ", rate=" + rate + ", area=" + area + '}';
-    }
-
-}
-
-class Genus {
-
-    String genus;
-    NamedAPIResource language;
-
-    public String getGenus() {
-        return genus;
-    }
-
-    public NamedAPIResource getLanguage() {
-        return language;
-    }
-
-    @Override
-    public String toString() {
-        return "Genus{" + "genus=" + genus + ", language=" + language + '}';
-    }
-
-}
-
-class PokemonSpeciesVariety {
-
-    boolean is_default;
-    NamedAPIResource pokemon;
-
-    public boolean isIs_default() {
-        return is_default;
-    }
-
-    public NamedAPIResource getPokemon() {
-        return pokemon;
-    }
-
-    @Override
-    public String toString() {
-        return "PokemonSpeciesVariety{" + "is_default=" + is_default + ", pokemon=" + pokemon + '}';
     }
 
 }

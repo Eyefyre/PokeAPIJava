@@ -101,63 +101,63 @@ public class Item {
         return "Item{" + "id=" + id + ", name=" + name + ", cost=" + cost + ", fling_power=" + fling_power + ", fling_effect=" + fling_effect + ", attributes=" + attributes + ", category=" + category + ", effect_entries=" + effect_entries + ", flavor_text_entries=" + flavor_text_entries + ", game_indices=" + game_indices + ", names=" + names + ", sprites=" + sprites + ", held_by_pokemon=" + held_by_pokemon + ", baby_trigger_for=" + baby_trigger_for + ", machines=" + machines + '}';
     }
 
-}
+    public class ItemSprites {
 
-class ItemSprites {
+        String Default;
 
-    String Default;
+        public ItemSprites(String Default) {
+            this.Default = Default;
+        }
 
-    public ItemSprites(String Default) {
-        this.Default = Default;
+        public String getDefault() {
+            return Default;
+        }
+
+        @Override
+        public String toString() {
+            return "ItemSprites{" + "Default=" + Default + '}';
+        }
+
     }
 
-    public String getDefault() {
-        return Default;
+    public class ItemHolderPokemon {
+
+        String pokemon;
+        ArrayList<ItemHolderPokemonVersionDetail> version_details;
+
+        public String getPokemon() {
+            return pokemon;
+        }
+
+        public ArrayList<ItemHolderPokemonVersionDetail> getVersion_details() {
+            return version_details;
+        }
+
+        @Override
+        public String toString() {
+            return "ItemHolderPokemon{" + "pokemon=" + pokemon + ", version_details=" + version_details + '}';
+        }
+
     }
 
-    @Override
-    public String toString() {
-        return "ItemSprites{" + "Default=" + Default + '}';
-    }
+    public class ItemHolderPokemonVersionDetail {
 
-}
+        String rarity;
+        NamedAPIResource version;
 
-class ItemHolderPokemon {
+        public String getRarity() {
+            return rarity;
+        }
 
-    String pokemon;
-    ArrayList<ItemHolderPokemonVersionDetail> version_details;
+        public NamedAPIResource getVersion() {
+            return version;
+        }
 
-    public String getPokemon() {
-        return pokemon;
-    }
+        @Override
+        public String toString() {
+            return "ItemHolderPokemonVersionDetail{" + "rarity=" + rarity + ", version=" + version + '}';
+        }
 
-    public ArrayList<ItemHolderPokemonVersionDetail> getVersion_details() {
-        return version_details;
-    }
-
-    @Override
-    public String toString() {
-        return "ItemHolderPokemon{" + "pokemon=" + pokemon + ", version_details=" + version_details + '}';
-    }
-
-}
-
-class ItemHolderPokemonVersionDetail {
-
-    String rarity;
-    NamedAPIResource version;
-
-    public String getRarity() {
-        return rarity;
-    }
-
-    public NamedAPIResource getVersion() {
-        return version;
-    }
-
-    @Override
-    public String toString() {
-        return "ItemHolderPokemonVersionDetail{" + "rarity=" + rarity + ", version=" + version + '}';
     }
 
 }

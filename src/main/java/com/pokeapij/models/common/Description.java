@@ -16,11 +16,6 @@ public class Description {
     String description;
     NamedAPIResource language;
 
-    public Description(String description, NamedAPIResource language) {
-        this.description = description;
-        this.language = language;
-    }
-
     public String getDescription() {
         return description;
     }

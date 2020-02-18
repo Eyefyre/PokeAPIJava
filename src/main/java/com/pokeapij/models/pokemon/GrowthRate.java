@@ -51,24 +51,24 @@ public class GrowthRate {
         return "GrowthRate{" + "id=" + id + ", name=" + name + ", formula=" + formula + ", descriptions=" + descriptions + ", levels=" + levels + ", pokemon_species=" + pokemon_species + '}';
     }
 
-}
+    public class GrowthRateExperienceLevel {
 
-class GrowthRateExperienceLevel {
+        int level;
+        int experience;
 
-    int level;
-    int experience;
+        public int getLevel() {
+            return level;
+        }
 
-    public int getLevel() {
-        return level;
-    }
+        public int getExperience() {
+            return experience;
+        }
 
-    public int getExperience() {
-        return experience;
-    }
+        @Override
+        public String toString() {
+            return "GrowthRateExperienceLevel{" + "level=" + level + ", experience=" + experience + '}';
+        }
 
-    @Override
-    public String toString() {
-        return "GrowthRateExperienceLevel{" + "level=" + level + ", experience=" + experience + '}';
     }
 
 }

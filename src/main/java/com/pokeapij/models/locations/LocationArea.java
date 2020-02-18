@@ -57,64 +57,64 @@ public class LocationArea {
         return "LocationArea{" + "id=" + id + ", name=" + name + ", game_index=" + game_index + ", encounter_method_rates=" + encounter_method_rates + ", location=" + location + ", names=" + names + ", pokemon_encounters=" + pokemon_encounters + '}';
     }
 
-}
+    public class EncounterMethodRate {
 
-class EncounterMethodRate {
+        NamedAPIResource encounter_method;
+        ArrayList<EncounterVersionDetails> version_details;
 
-    NamedAPIResource encounter_method;
-    ArrayList<EncounterVersionDetails> version_details;
+        public NamedAPIResource getEncounter_method() {
+            return encounter_method;
+        }
 
-    public NamedAPIResource getEncounter_method() {
-        return encounter_method;
+        public ArrayList<EncounterVersionDetails> getVersion_details() {
+            return version_details;
+        }
+
+        @Override
+        public String toString() {
+            return "EncounterMethodRate{" + "encounter_method=" + encounter_method + ", version_details=" + version_details + '}';
+        }
+
     }
 
-    public ArrayList<EncounterVersionDetails> getVersion_details() {
-        return version_details;
+    public class EncounterVersionDetails {
+
+        int rate;
+        NamedAPIResource version;
+
+        public int getRate() {
+            return rate;
+        }
+
+        public NamedAPIResource getVersion() {
+            return version;
+        }
+
+        @Override
+        public String toString() {
+            return "EncounterVersionDetails{" + "rate=" + rate + ", version=" + version + '}';
+        }
+
     }
 
-    @Override
-    public String toString() {
-        return "EncounterMethodRate{" + "encounter_method=" + encounter_method + ", version_details=" + version_details + '}';
-    }
+    public class PokemonEncounter {
 
-}
+        NamedAPIResource pokemon;
+        ArrayList<VersionEncounterDetail> version_details;
 
-class EncounterVersionDetails {
+        public NamedAPIResource getPokemon() {
+            return pokemon;
+        }
 
-    int rate;
-    NamedAPIResource version;
+        public ArrayList<VersionEncounterDetail> getVersion_details() {
+            return version_details;
+        }
 
-    public int getRate() {
-        return rate;
-    }
+        @Override
+        public String toString() {
+            return "PokemonEncounter{" + "pokemon=" + pokemon + ", version_details=" + version_details + '}';
+        }
 
-    public NamedAPIResource getVersion() {
-        return version;
-    }
-
-    @Override
-    public String toString() {
-        return "EncounterVersionDetails{" + "rate=" + rate + ", version=" + version + '}';
-    }
-
-}
-
-class PokemonEncounter {
-
-    NamedAPIResource pokemon;
-    ArrayList<VersionEncounterDetail> version_details;
-
-    public NamedAPIResource getPokemon() {
-        return pokemon;
-    }
-
-    public ArrayList<VersionEncounterDetail> getVersion_details() {
-        return version_details;
-    }
-
-    @Override
-    public String toString() {
-        return "PokemonEncounter{" + "pokemon=" + pokemon + ", version_details=" + version_details + '}';
     }
 
 }

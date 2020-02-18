@@ -67,64 +67,63 @@ public class Stat {
         return "Stat{" + "id=" + id + ", name=" + name + ", game_index=" + game_index + ", is_battle_only=" + is_battle_only + ", affecting_moves=" + affecting_moves + ", affecting_natures=" + affecting_natures + ", characteristics=" + characteristics + ", move_damage_class=" + move_damage_class + ", names=" + names + '}';
     }
 
-}
+    public class MoveStatAffectSet {
 
-class MoveStatAffectSet {
+        ArrayList<MoveStatAffect> increase;
+        ArrayList<MoveStatAffect> decrease;
 
-    ArrayList<MoveStatAffect> increase;
-    ArrayList<MoveStatAffect> decrease;
+        public ArrayList<MoveStatAffect> getIncrease() {
+            return increase;
+        }
 
-    public ArrayList<MoveStatAffect> getIncrease() {
-        return increase;
+        public ArrayList<MoveStatAffect> getDecrease() {
+            return decrease;
+        }
+
+        @Override
+        public String toString() {
+            return "MoveStatAffectSet{" + "increase=" + increase + ", decrease=" + decrease + '}';
+        }
+
     }
 
-    public ArrayList<MoveStatAffect> getDecrease() {
-        return decrease;
+    public class MoveStatAffect {
+
+        int change;
+        NamedAPIResource move;
+
+        public int getChange() {
+            return change;
+        }
+
+        public NamedAPIResource getMove() {
+            return move;
+        }
+
+        @Override
+        public String toString() {
+            return "MoveStatAffect{" + "change=" + change + ", move=" + move + '}';
+        }
+
     }
 
-    @Override
-    public String toString() {
-        return "MoveStatAffectSet{" + "increase=" + increase + ", decrease=" + decrease + '}';
+    public class NatureStatAffectSet {
+
+        ArrayList<NamedAPIResource> increase;
+        ArrayList<NamedAPIResource> decrease;
+
+        public ArrayList<NamedAPIResource> getIncrease() {
+            return increase;
+        }
+
+        public ArrayList<NamedAPIResource> getDecrease() {
+            return decrease;
+        }
+
+        @Override
+        public String toString() {
+            return "NatureStatAffectSet{" + "increase=" + increase + ", decrease=" + decrease + '}';
+        }
+
     }
-
-}
-
-class MoveStatAffect {
-
-    int change;
-    NamedAPIResource move;
-
-    public int getChange() {
-        return change;
-    }
-
-    public NamedAPIResource getMove() {
-        return move;
-    }
-
-    @Override
-    public String toString() {
-        return "MoveStatAffect{" + "change=" + change + ", move=" + move + '}';
-    }
-
-}
-
-class NatureStatAffectSet {
-
-    ArrayList<NamedAPIResource> increase;
-    ArrayList<NamedAPIResource> decrease;
-
-    public ArrayList<NamedAPIResource> getIncrease() {
-        return increase;
-    }
-
-    public ArrayList<NamedAPIResource> getDecrease() {
-        return decrease;
-    }
-
-    @Override
-    public String toString() {
-        return "NatureStatAffectSet{" + "increase=" + increase + ", decrease=" + decrease + '}';
-    }
-
 }

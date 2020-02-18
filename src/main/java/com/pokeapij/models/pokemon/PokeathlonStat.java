@@ -41,44 +41,43 @@ public class PokeathlonStat {
         return "PokeathlonStat{" + "id=" + id + ", name=" + name + ", names=" + names + ", affecting_natures=" + affecting_natures + '}';
     }
 
-}
+    public class NaturePokeathlonStatAffectSet {
 
-class NaturePokeathlonStatAffectSet {
+        ArrayList<NaturePokeathlonStatAffect> increase;
+        ArrayList<NaturePokeathlonStatAffect> decrease;
 
-    ArrayList<NaturePokeathlonStatAffect> increase;
-    ArrayList<NaturePokeathlonStatAffect> decrease;
+        public ArrayList<NaturePokeathlonStatAffect> getIncrease() {
+            return increase;
+        }
 
-    public ArrayList<NaturePokeathlonStatAffect> getIncrease() {
-        return increase;
+        public ArrayList<NaturePokeathlonStatAffect> getDecrease() {
+            return decrease;
+        }
+
+        @Override
+        public String toString() {
+            return "NaturePokeathlonStatAffectSet{" + "increase=" + increase + ", decrease=" + decrease + '}';
+        }
+
     }
 
-    public ArrayList<NaturePokeathlonStatAffect> getDecrease() {
-        return decrease;
+    public class NaturePokeathlonStatAffect {
+
+        int max_change;
+        NamedAPIResource nature;
+
+        public int getMax_change() {
+            return max_change;
+        }
+
+        public NamedAPIResource getNature() {
+            return nature;
+        }
+
+        @Override
+        public String toString() {
+            return "NaturePokeathlonStatAffect{" + "max_change=" + max_change + ", nature=" + nature + '}';
+        }
+
     }
-
-    @Override
-    public String toString() {
-        return "NaturePokeathlonStatAffectSet{" + "increase=" + increase + ", decrease=" + decrease + '}';
-    }
-
-}
-
-class NaturePokeathlonStatAffect {
-
-    int max_change;
-    NamedAPIResource nature;
-
-    public int getMax_change() {
-        return max_change;
-    }
-
-    public NamedAPIResource getNature() {
-        return nature;
-    }
-
-    @Override
-    public String toString() {
-        return "NaturePokeathlonStatAffect{" + "max_change=" + max_change + ", nature=" + nature + '}';
-    }
-
 }

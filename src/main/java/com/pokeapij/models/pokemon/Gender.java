@@ -40,24 +40,24 @@ public class Gender {
         return "Gender{" + "id=" + id + ", name=" + name + ", pokemon_species_details=" + pokemon_species_details + ", required_for_evolution=" + required_for_evolution + '}';
     }
 
-}
+    public class PokemonSpeciesGender {
 
-class PokemonSpeciesGender {
+        int rate;
+        NamedAPIResource pokemon_species;
 
-    int rate;
-    NamedAPIResource pokemon_species;
+        public int getRate() {
+            return rate;
+        }
 
-    public int getRate() {
-        return rate;
-    }
+        public NamedAPIResource getPokemon_species() {
+            return pokemon_species;
+        }
 
-    public NamedAPIResource getPokemon_species() {
-        return pokemon_species;
-    }
+        @Override
+        public String toString() {
+            return "PokemonSpeciesGender{" + "rate=" + rate + ", pokemon_species=" + pokemon_species + '}';
+        }
 
-    @Override
-    public String toString() {
-        return "PokemonSpeciesGender{" + "rate=" + rate + ", pokemon_species=" + pokemon_species + '}';
     }
 
 }

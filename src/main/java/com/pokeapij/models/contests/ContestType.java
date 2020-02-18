@@ -40,29 +40,29 @@ public class ContestType {
         return "ContestType{" + "id=" + id + ", name=" + name + ", berry_flavor=" + berry_flavor + ", names=" + names + '}';
     }
 
-}
+    public class ContestName {
 
-class ContestName {
+        String name;
+        String color;
+        NamedAPIResource language;
 
-    String name;
-    String color;
-    NamedAPIResource language;
+        public String getName() {
+            return name;
+        }
 
-    public String getName() {
-        return name;
-    }
+        public String getColor() {
+            return color;
+        }
 
-    public String getColor() {
-        return color;
-    }
+        public NamedAPIResource getLanguage() {
+            return language;
+        }
 
-    public NamedAPIResource getLanguage() {
-        return language;
-    }
+        @Override
+        public String toString() {
+            return "ContestName{" + "name=" + name + ", color=" + color + ", language=" + language + '}';
+        }
 
-    @Override
-    public String toString() {
-        return "ContestName{" + "name=" + name + ", color=" + color + ", language=" + language + '}';
     }
 
 }

@@ -80,24 +80,24 @@ public class Berry {
         return "Berry{" + "id=" + id + ", name=" + name + ", growth_time=" + growth_time + ", max_harvest=" + max_harvest + ", natural_gift_power=" + natural_gift_power + ", size=" + size + ", smoothness=" + smoothness + ", soil_dryness=" + soil_dryness + ", firmness=" + firmness + ", flavors=" + flavors + ", item=" + item + ", natural_gift_type=" + natural_gift_type + '}';
     }
 
-}
+    public class BerryFlavorMap {
 
-class BerryFlavorMap {
+        int potency;
+        NamedAPIResource flavor;
 
-    int potency;
-    NamedAPIResource flavor;
+        public int getPotency() {
+            return potency;
+        }
 
-    public int getPotency() {
-        return potency;
-    }
+        public NamedAPIResource getFlavor() {
+            return flavor;
+        }
 
-    public NamedAPIResource getFlavor() {
-        return flavor;
-    }
+        @Override
+        public String toString() {
+            return "BerryFlavorMap{" + "potency=" + potency + ", flavor=" + flavor + '}';
+        }
 
-    @Override
-    public String toString() {
-        return "BerryFlavorMap{" + "potency=" + potency + ", flavor=" + flavor + '}';
     }
 
 }

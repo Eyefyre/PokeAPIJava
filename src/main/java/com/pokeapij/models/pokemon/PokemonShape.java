@@ -46,24 +46,24 @@ public class PokemonShape {
         return "PokemonShape{" + "id=" + id + ", name=" + name + ", awesome_names=" + awesome_names + ", names=" + names + ", pokemon_species=" + pokemon_species + '}';
     }
 
-}
+    public class AwesomeName {
 
-class AwesomeName {
+        String awesome_name;
+        NamedAPIResource language;
 
-    String awesome_name;
-    NamedAPIResource language;
+        public String getAwesome_name() {
+            return awesome_name;
+        }
 
-    public String getAwesome_name() {
-        return awesome_name;
-    }
+        public NamedAPIResource getLanguage() {
+            return language;
+        }
 
-    public NamedAPIResource getLanguage() {
-        return language;
-    }
+        @Override
+        public String toString() {
+            return "AwesomeName{" + "awesome_name=" + awesome_name + ", language=" + language + '}';
+        }
 
-    @Override
-    public String toString() {
-        return "AwesomeName{" + "awesome_name=" + awesome_name + ", language=" + language + '}';
     }
 
 }

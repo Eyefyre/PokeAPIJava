@@ -46,24 +46,24 @@ public class BerryFlavor {
         return "BerryFlavor{" + "id=" + id + ", name=" + name + ", berries=" + berries + ", contest_type=" + contest_type + ", names=" + names + '}';
     }
 
-}
+    public class FlavorBerryMap {
 
-class FlavorBerryMap {
+        int potency;
+        NamedAPIResource berry;
 
-    int potency;
-    NamedAPIResource berry;
+        public int getPotency() {
+            return potency;
+        }
 
-    public int getPotency() {
-        return potency;
-    }
+        public NamedAPIResource getBerry() {
+            return berry;
+        }
 
-    public NamedAPIResource getBerry() {
-        return berry;
-    }
+        @Override
+        public String toString() {
+            return "FlavorBerryMap{" + "potency=" + potency + ", berry=" + berry + '}';
+        }
 
-    @Override
-    public String toString() {
-        return "FlavorBerryMap{" + "potency=" + potency + ", berry=" + berry + '}';
     }
 
 }

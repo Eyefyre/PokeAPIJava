@@ -4,7 +4,7 @@
  Maintained by [Eyefyre](https://github.com/Eyefyre)
  
 ## Example
- Full Documentation and tests are coming soon
+ Full Documentation coming soon
  ```
  public class PokeAPIJava {
     public static void main(String[] args) {

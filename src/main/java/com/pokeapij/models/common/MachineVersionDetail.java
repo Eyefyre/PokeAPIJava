@@ -21,7 +21,7 @@ public class MachineVersionDetail {
         return machine;
     }
 
-    public NamedAPIResource getVersion_group() {
+    public NamedAPIResource getVersionGroup() {
         return version_group;
     }
 

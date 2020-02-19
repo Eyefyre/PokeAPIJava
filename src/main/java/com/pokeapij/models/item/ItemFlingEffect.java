@@ -20,7 +20,7 @@ public class ItemFlingEffect {
     ArrayList<Effect> effect_entries;
     NamedAPIResource items;
 
-    public int getId() {
+    public int getID() {
         return id;
     }
 
@@ -28,7 +28,7 @@ public class ItemFlingEffect {
         return name;
     }
 
-    public ArrayList<Effect> getEffect_entries() {
+    public ArrayList<Effect> getEffectEntries() {
         return effect_entries;
     }
 

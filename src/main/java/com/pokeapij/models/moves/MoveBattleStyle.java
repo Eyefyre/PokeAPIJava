@@ -18,7 +18,7 @@ public class MoveBattleStyle {
     String name;
     ArrayList<Name> names;
 
-    public int getId() {
+    public int getID() {
         return id;
     }
 

@@ -23,7 +23,7 @@ public class Region {
     ArrayList<NamedAPIResource> pokedexes;
     ArrayList<NamedAPIResource> version_groups;
 
-    public int getId() {
+    public int getID() {
         return id;
     }
 
@@ -39,7 +39,7 @@ public class Region {
         return names;
     }
 
-    public NamedAPIResource getMain_generation() {
+    public NamedAPIResource getMainGeneration() {
         return main_generation;
     }
 
@@ -47,7 +47,7 @@ public class Region {
         return pokedexes;
     }
 
-    public ArrayList<NamedAPIResource> getVersion_groups() {
+    public ArrayList<NamedAPIResource> getVersionGroups() {
         return version_groups;
     }
 

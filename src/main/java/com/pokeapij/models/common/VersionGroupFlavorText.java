@@ -25,7 +25,7 @@ public class VersionGroupFlavorText {
         return language;
     }
 
-    public NamedAPIResource getVersion_group() {
+    public NamedAPIResource getVersionGroup() {
         return version_group;
     }
 

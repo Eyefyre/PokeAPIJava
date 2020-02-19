@@ -20,7 +20,7 @@ public class PokeathlonStat {
     ArrayList<Name> names;
     NaturePokeathlonStatAffectSet affecting_natures;
 
-    public int getId() {
+    public int getID() {
         return id;
     }
 
@@ -32,7 +32,7 @@ public class PokeathlonStat {
         return names;
     }
 
-    public NaturePokeathlonStatAffectSet getAffecting_natures() {
+    public NaturePokeathlonStatAffectSet getAffectingNatures() {
         return affecting_natures;
     }
 
@@ -66,7 +66,7 @@ public class PokeathlonStat {
         int max_change;
         NamedAPIResource nature;
 
-        public int getMax_change() {
+        public int getMaxChange() {
             return max_change;
         }
 

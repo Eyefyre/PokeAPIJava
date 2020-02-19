@@ -18,7 +18,7 @@ public class Machine {
     NamedAPIResource move;
     NamedAPIResource version_group;
 
-    public int getId() {
+    public int getID() {
         return id;
     }
 
@@ -30,7 +30,7 @@ public class Machine {
         return move;
     }
 
-    public NamedAPIResource getVersion_group() {
+    public NamedAPIResource getVersionGroup() {
         return version_group;
     }
 

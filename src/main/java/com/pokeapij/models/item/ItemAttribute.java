@@ -22,7 +22,7 @@ public class ItemAttribute {
     ArrayList<Name> names;
     ArrayList<Description> descriptions;
 
-    public int getId() {
+    public int getID() {
         return id;
     }
 

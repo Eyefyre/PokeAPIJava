@@ -24,7 +24,7 @@ public class LocationArea {
     ArrayList<Name> names;
     ArrayList<PokemonEncounter> pokemon_encounters;
 
-    public int getId() {
+    public int getID() {
         return id;
     }
 
@@ -32,11 +32,11 @@ public class LocationArea {
         return name;
     }
 
-    public int getGame_index() {
+    public int getGameIndex() {
         return game_index;
     }
 
-    public ArrayList<EncounterMethodRate> getEncounter_method_rates() {
+    public ArrayList<EncounterMethodRate> getEncounterMethodRates() {
         return encounter_method_rates;
     }
 
@@ -48,7 +48,7 @@ public class LocationArea {
         return names;
     }
 
-    public ArrayList<PokemonEncounter> getPokemon_encounters() {
+    public ArrayList<PokemonEncounter> getPokemonEncounters() {
         return pokemon_encounters;
     }
 
@@ -62,11 +62,11 @@ public class LocationArea {
         NamedAPIResource encounter_method;
         ArrayList<EncounterVersionDetails> version_details;
 
-        public NamedAPIResource getEncounter_method() {
+        public NamedAPIResource getEncounterMethod() {
             return encounter_method;
         }
 
-        public ArrayList<EncounterVersionDetails> getVersion_details() {
+        public ArrayList<EncounterVersionDetails> getVersionDetails() {
             return version_details;
         }
 
@@ -106,7 +106,7 @@ public class LocationArea {
             return pokemon;
         }
 
-        public ArrayList<VersionEncounterDetail> getVersion_details() {
+        public ArrayList<VersionEncounterDetail> getVersionDetails() {
             return version_details;
         }
 

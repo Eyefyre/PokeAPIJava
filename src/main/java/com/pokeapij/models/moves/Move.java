@@ -43,7 +43,7 @@ public class Move {
     NamedAPIResource target;
     NamedAPIResource type;
 
-    public int getId() {
+    public int getID() {
         return id;
     }
 
@@ -55,11 +55,11 @@ public class Move {
         return accuracy;
     }
 
-    public int getEffect_chance() {
+    public int getEffectChance() {
         return effect_chance;
     }
 
-    public int getPp() {
+    public int getPP() {
         return pp;
     }
 
@@ -71,31 +71,31 @@ public class Move {
         return power;
     }
 
-    public ContestComboSets getContest_combos() {
+    public ContestComboSets getContestCombos() {
         return contest_combos;
     }
 
-    public NamedAPIResource getContest_type() {
+    public NamedAPIResource getContestType() {
         return contest_type;
     }
 
-    public APIResource getContest_effect() {
+    public APIResource getContestEffect() {
         return contest_effect;
     }
 
-    public NamedAPIResource getDamage_class() {
+    public NamedAPIResource getDamageClass() {
         return damage_class;
     }
 
-    public ArrayList<VerboseEffect> getEffect_entries() {
+    public ArrayList<VerboseEffect> getEffectEntries() {
         return effect_entries;
     }
 
-    public ArrayList<AbilityEffectChange> getEffect_changes() {
+    public ArrayList<AbilityEffectChange> getEffectChanges() {
         return effect_changes;
     }
 
-    public ArrayList<MoveFlavorText> getFlavor_text_entries() {
+    public ArrayList<MoveFlavorText> getFlavorTextEntries() {
         return flavor_text_entries;
     }
 
@@ -115,15 +115,15 @@ public class Move {
         return names;
     }
 
-    public ArrayList<PastMoveStatValue> getPast_values() {
+    public ArrayList<PastMoveStatValue> getPastValues() {
         return past_values;
     }
 
-    public ArrayList<MoveStatChange> getStat_changes() {
+    public ArrayList<MoveStatChange> getStatChanges() {
         return stat_changes;
     }
 
-    public APIResource getSuper_contest_effect() {
+    public APIResource getSuperContestEffect() {
         return super_contest_effect;
     }
 
@@ -165,11 +165,11 @@ public class Move {
         ArrayList<NamedAPIResource> use_before;
         ArrayList<NamedAPIResource> use_after;
 
-        public ArrayList<NamedAPIResource> getUse_before() {
+        public ArrayList<NamedAPIResource> getUseBefore() {
             return use_before;
         }
 
-        public ArrayList<NamedAPIResource> getUse_after() {
+        public ArrayList<NamedAPIResource> getUseAfter() {
             return use_after;
         }
 
@@ -186,7 +186,7 @@ public class Move {
         NamedAPIResource language;
         NamedAPIResource version_group;
 
-        public String getFlavor_text() {
+        public String getFlavorText() {
             return flavor_text;
         }
 
@@ -194,7 +194,7 @@ public class Move {
             return language;
         }
 
-        public NamedAPIResource getVersion_group() {
+        public NamedAPIResource getVersionGroup() {
             return version_group;
         }
 
@@ -219,7 +219,7 @@ public class Move {
             return accuracy;
         }
 
-        public int getEffect_chance() {
+        public int getEffectChance() {
             return effect_chance;
         }
 
@@ -227,11 +227,11 @@ public class Move {
             return power;
         }
 
-        public int getPp() {
+        public int getPP() {
             return pp;
         }
 
-        public ArrayList<VerboseEffect> getEffect_entries() {
+        public ArrayList<VerboseEffect> getEffectEntries() {
             return effect_entries;
         }
 
@@ -239,7 +239,7 @@ public class Move {
             return type;
         }
 
-        public NamedAPIResource getVersion_group() {
+        public NamedAPIResource getVersionGroup() {
             return version_group;
         }
 
@@ -293,19 +293,19 @@ public class Move {
             return category;
         }
 
-        public int getMin_hits() {
+        public int getMinHits() {
             return min_hits;
         }
 
-        public int getMax_hits() {
+        public int getMaxHits() {
             return max_hits;
         }
 
-        public int getMin_turns() {
+        public int getMinTurns() {
             return min_turns;
         }
 
-        public int getMax_turns() {
+        public int getMaxTurns() {
             return max_turns;
         }
 
@@ -317,19 +317,19 @@ public class Move {
             return healing;
         }
 
-        public int getCrit_rate() {
+        public int getCritRate() {
             return crit_rate;
         }
 
-        public int getAilment_chance() {
+        public int getAilmentChance() {
             return ailment_chance;
         }
 
-        public int getFlinch_chance() {
+        public int getFlinchChance() {
             return flinch_chance;
         }
 
-        public int getStat_chance() {
+        public int getStatChance() {
             return stat_chance;
         }
 

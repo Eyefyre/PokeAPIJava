@@ -36,7 +36,7 @@ public class Item {
     APIResource baby_trigger_for;
     ArrayList<MachineVersionDetail> machines;
 
-    public int getId() {
+    public int getID() {
         return id;
     }
 
@@ -48,11 +48,11 @@ public class Item {
         return cost;
     }
 
-    public int getFling_power() {
+    public int getFlingPower() {
         return fling_power;
     }
 
-    public NamedAPIResource getFling_effect() {
+    public NamedAPIResource getFlingEffect() {
         return fling_effect;
     }
 
@@ -64,15 +64,15 @@ public class Item {
         return category;
     }
 
-    public ArrayList<VerboseEffect> getEffect_entries() {
+    public ArrayList<VerboseEffect> getEffectEntries() {
         return effect_entries;
     }
 
-    public ArrayList<VersionGroupFlavorText> getFlavor_text_entries() {
+    public ArrayList<VersionGroupFlavorText> getFlavorTextEntries() {
         return flavor_text_entries;
     }
 
-    public ArrayList<GenerationGameIndex> getGame_indices() {
+    public ArrayList<GenerationGameIndex> getGameIndices() {
         return game_indices;
     }
 
@@ -84,11 +84,11 @@ public class Item {
         return sprites;
     }
 
-    public ArrayList<ItemHolderPokemon> getHeld_by_pokemon() {
+    public ArrayList<ItemHolderPokemon> getHeldByPokemon() {
         return held_by_pokemon;
     }
 
-    public APIResource getBaby_trigger_for() {
+    public APIResource getBabyTriggerFor() {
         return baby_trigger_for;
     }
 
@@ -129,7 +129,7 @@ public class Item {
             return pokemon;
         }
 
-        public ArrayList<ItemHolderPokemonVersionDetail> getVersion_details() {
+        public ArrayList<ItemHolderPokemonVersionDetail> getVersionDetails() {
             return version_details;
         }
 

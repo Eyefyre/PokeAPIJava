@@ -23,7 +23,7 @@ public class Location {
     ArrayList<GenerationGameIndex> game_indices;
     ArrayList<NamedAPIResource> areas;
 
-    public int getId() {
+    public int getID() {
         return id;
     }
 
@@ -39,7 +39,7 @@ public class Location {
         return names;
     }
 
-    public ArrayList<GenerationGameIndex> getGame_indices() {
+    public ArrayList<GenerationGameIndex> getGameIndices() {
         return game_indices;
     }
 

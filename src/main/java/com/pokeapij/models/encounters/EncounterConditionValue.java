@@ -20,7 +20,7 @@ public class EncounterConditionValue {
     ArrayList<NamedAPIResource> condition;
     ArrayList<Name> names;
 
-    public int getId() {
+    public int getID() {
         return id;
     }
 

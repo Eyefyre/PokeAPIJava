@@ -22,7 +22,7 @@ public class MoveLearnMethod {
     ArrayList<Name> names;
     ArrayList<NamedAPIResource> version_groups;
 
-    public int getId() {
+    public int getID() {
         return id;
     }
 
@@ -38,7 +38,7 @@ public class MoveLearnMethod {
         return names;
     }
 
-    public ArrayList<NamedAPIResource> getVersion_groups() {
+    public ArrayList<NamedAPIResource> getVersionGroups() {
         return version_groups;
     }
 

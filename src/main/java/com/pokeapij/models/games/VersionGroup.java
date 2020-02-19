@@ -23,7 +23,7 @@ public class VersionGroup {
     ArrayList<NamedAPIResource> regions;
     ArrayList<NamedAPIResource> versions;
 
-    public int getId() {
+    public int getID() {
         return id;
     }
 
@@ -39,7 +39,7 @@ public class VersionGroup {
         return generation;
     }
 
-    public ArrayList<NamedAPIResource> getMove_learn_methods() {
+    public ArrayList<NamedAPIResource> getMoveLearnMethods() {
         return move_learn_methods;
     }
 

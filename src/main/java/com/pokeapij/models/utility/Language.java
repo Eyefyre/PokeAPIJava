@@ -21,7 +21,7 @@ public class Language {
     String iso3166;
     ArrayList<Name> names;
 
-    public int getId() {
+    public int getID() {
         return id;
     }
 
@@ -33,11 +33,11 @@ public class Language {
         return official;
     }
 
-    public String getIso639() {
+    public String getISO639() {
         return iso639;
     }
 
-    public String getIso3166() {
+    public String getISO3166() {
         return iso3166;
     }
 

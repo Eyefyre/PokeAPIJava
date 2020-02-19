@@ -33,15 +33,15 @@ public class Type {
         return name;
     }
 
-    public TypeRelations getDamage_relations() {
+    public TypeRelations getDamageRelations() {
         return damage_relations;
     }
 
-    public ArrayList<GenerationGameIndex> getGame_indices() {
+    public ArrayList<GenerationGameIndex> getGameIndices() {
         return game_indices;
     }
 
-    public NamedAPIResource getMove_damage_class() {
+    public NamedAPIResource getMoveDamageClass() {
         return move_damage_class;
     }
 
@@ -91,27 +91,27 @@ public class Type {
         ArrayList<NamedAPIResource> half_damage_from;
         ArrayList<NamedAPIResource> double_damage_from;
 
-        public ArrayList<NamedAPIResource> getNo_damage_to() {
+        public ArrayList<NamedAPIResource> getNoDamageTo() {
             return no_damage_to;
         }
 
-        public ArrayList<NamedAPIResource> getHalf_damage_to() {
+        public ArrayList<NamedAPIResource> getHalfDamageTo() {
             return half_damage_to;
         }
 
-        public ArrayList<NamedAPIResource> getDouble_damage_to() {
+        public ArrayList<NamedAPIResource> getDoubleDamageTo() {
             return double_damage_to;
         }
 
-        public ArrayList<NamedAPIResource> getNo_damage_from() {
+        public ArrayList<NamedAPIResource> getNoDamageFrom() {
             return no_damage_from;
         }
 
-        public ArrayList<NamedAPIResource> getHalf_damage_from() {
+        public ArrayList<NamedAPIResource> getHalfDamageFrom() {
             return half_damage_from;
         }
 
-        public ArrayList<NamedAPIResource> getDouble_damage_from() {
+        public ArrayList<NamedAPIResource> getDoubleDamageFrom() {
             return double_damage_from;
         }
 

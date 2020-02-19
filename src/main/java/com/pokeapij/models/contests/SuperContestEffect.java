@@ -20,7 +20,7 @@ public class SuperContestEffect {
     ArrayList<FlavorText> flavor_text_entries;
     ArrayList<NamedAPIResource> moves;
 
-    public int getId() {
+    public int getID() {
         return id;
     }
 
@@ -28,7 +28,7 @@ public class SuperContestEffect {
         return appeal;
     }
 
-    public ArrayList<FlavorText> getFlavor_text_entries() {
+    public ArrayList<FlavorText> getFlavorTextEntries() {
         return flavor_text_entries;
     }
 

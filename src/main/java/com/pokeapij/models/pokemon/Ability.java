@@ -27,7 +27,7 @@ public class Ability {
     ArrayList<AbilityFlavorText> flavor_text_entries;
     ArrayList<AbilityPokemon> pokemon;
 
-    public int getId() {
+    public int getID() {
         return id;
     }
 
@@ -35,7 +35,7 @@ public class Ability {
         return name;
     }
 
-    public boolean isIs_main_series() {
+    public boolean isMainSeries() {
         return is_main_series;
     }
 
@@ -47,15 +47,15 @@ public class Ability {
         return names;
     }
 
-    public ArrayList<VerboseEffect> getEffect_entries() {
+    public ArrayList<VerboseEffect> getEffectEntries() {
         return effect_entries;
     }
 
-    public ArrayList<AbilityEffectChange> getEffect_changes() {
+    public ArrayList<AbilityEffectChange> getEffectChanges() {
         return effect_changes;
     }
 
-    public ArrayList<AbilityFlavorText> getFlavor_text_entries() {
+    public ArrayList<AbilityFlavorText> getFlavorTextEntries() {
         return flavor_text_entries;
     }
 
@@ -74,7 +74,7 @@ public class Ability {
         NamedAPIResource language;
         NamedAPIResource version_group;
 
-        public String getFlavor_text() {
+        public String getFlavorText() {
             return flavor_text;
         }
 
@@ -82,7 +82,7 @@ public class Ability {
             return language;
         }
 
-        public NamedAPIResource getVersion_group() {
+        public NamedAPIResource getVersionGroup() {
             return version_group;
         }
 
@@ -99,7 +99,7 @@ public class Ability {
         int slot;
         NamedAPIResource pokemon;
 
-        public boolean isIs_hidden() {
+        public boolean isHidden() {
             return is_hidden;
         }
 

@@ -26,1255 +26,722 @@ public class PokeClient implements PokeClientInterface {
 
     private final PokeService pokeService = new PokeService();
 
+    private Object getObject(String path, int offset, int limit, String objectName) {
+        String fullpath = path + "/?limit=" + limit + "&" + "offset=" + offset;
+        return this.useService(fullpath, objectName);
+    }
+
+    private Object useService(String path, String objectName) {
+        if (pokeService.getCache().contains(path)) {
+            return pokeService.getCache().get(path);
+        }
+        return pokeService.getResource(path, objectName);
+    }
+
+    private Object getObject(String path, String name, String objectName) {
+        String fullpath = path + "/" + name;
+        return this.useService(fullpath, objectName);
+
+    }
+
+    private Object getObject(String path, int id, String objectName) {
+        String fullpath = path + "/" + id;
+        return this.useService(fullpath, objectName);
+    }
+
     @Override
     public NamedAPIResourceList getBerryList(int offset, int limit) {
-        String fullpath = "berry/?limit=" + limit + "&" + "offset=" + offset;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (NamedAPIResourceList) pokeService.getCache().get(fullpath);
-        }
-        return (NamedAPIResourceList) pokeService.getResource(fullpath, "NamedAPIResourceList");
+        return (NamedAPIResourceList) this.getObject("berry", offset, limit, "NamedAPIResourceList");
     }
 
     @Override
     public NamedAPIResourceList getBerryFirmnessList(int offset, int limit) {
-        String fullpath = "berry-firmness/?limit=" + limit + "&" + "offset=" + offset;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (NamedAPIResourceList) pokeService.getCache().get(fullpath);
-        }
-        return (NamedAPIResourceList) pokeService.getResource(fullpath, "NamedAPIResourceList");
+        return (NamedAPIResourceList) this.getObject("berry-firmness", offset, limit, "NamedAPIResourceList");
     }
 
     @Override
     public NamedAPIResourceList getBerryFlavorList(int offset, int limit) {
-        String fullpath = "berry-flavor/?limit=" + limit + "&" + "offset=" + offset;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (NamedAPIResourceList) pokeService.getCache().get(fullpath);
-        }
-        return (NamedAPIResourceList) pokeService.getResource(fullpath, "NamedAPIResourceList");
+        return (NamedAPIResourceList) this.getObject("berry-flavor", offset, limit, "NamedAPIResourceList");
     }
 
     @Override
     public NamedAPIResourceList getContestTypeList(int offset, int limit) {
-        String fullpath = "contest-type/?limit=" + limit + "&" + "offset=" + offset;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (NamedAPIResourceList) pokeService.getCache().get(fullpath);
-        }
-        return (NamedAPIResourceList) pokeService.getResource(fullpath, "NamedAPIResourceList");
+        return (NamedAPIResourceList) this.getObject("contest-type", offset, limit, "NamedAPIResourceList");
     }
 
     @Override
     public APIResourceList getContestEffectList(int offset, int limit) {
-        String fullpath = "contest-effect/?limit=" + limit + "&" + "offset=" + offset;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (APIResourceList) pokeService.getCache().get(fullpath);
-        }
-        return (APIResourceList) pokeService.getResource(fullpath, "APIResourceList");
+        return (APIResourceList) this.getObject("contest-effect", offset, limit, "APIResourceList");
     }
 
     @Override
     public APIResourceList getSuperContestEffectList(int offset, int limit) {
-        String fullpath = "super-contest-effect/?limit=" + limit + "&" + "offset=" + offset;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (APIResourceList) pokeService.getCache().get(fullpath);
-        }
-        return (APIResourceList) pokeService.getResource(fullpath, "APIResourceList");
+        return (APIResourceList) this.getObject("super-contest-effect", offset, limit, "APIResourceList");
     }
 
     @Override
     public NamedAPIResourceList getEncounterMethodList(int offset, int limit) {
-        String fullpath = "encounter-method/?limit=" + limit + "&" + "offset=" + offset;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (NamedAPIResourceList) pokeService.getCache().get(fullpath);
-        }
-        return (NamedAPIResourceList) pokeService.getResource(fullpath, "NamedAPIResourceList");
+        return (NamedAPIResourceList) this.getObject("encounter-method", offset, limit, "NamedAPIResourceList");
     }
 
     @Override
     public NamedAPIResourceList getEncounterConditionList(int offset, int limit) {
-        String fullpath = "encounter-condition/?limit=" + limit + "&" + "offset=" + offset;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (NamedAPIResourceList) pokeService.getCache().get(fullpath);
-        }
-        return (NamedAPIResourceList) pokeService.getResource(fullpath, "NamedAPIResourceList");
+        return (NamedAPIResourceList) this.getObject("encounter-condition", offset, limit, "NamedAPIResourceList");
     }
 
     @Override
     public NamedAPIResourceList getEncounterConditionValueList(int offset, int limit) {
-        String fullpath = "encounter-condition-value/?limit=" + limit + "&" + "offset=" + offset;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (NamedAPIResourceList) pokeService.getCache().get(fullpath);
-        }
-        return (NamedAPIResourceList) pokeService.getResource(fullpath, "NamedAPIResourceList");
+        return (NamedAPIResourceList) this.getObject("encounter-condition-value", offset, limit, "NamedAPIResourceList");
     }
 
     @Override
     public APIResourceList getEvolutionChainList(int offset, int limit) {
-        String fullpath = "evolution-chain/?limit=" + limit + "&" + "offset=" + offset;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (APIResourceList) pokeService.getCache().get(fullpath);
-        }
-        return (APIResourceList) pokeService.getResource(fullpath, "APIResourceList");
+        return (APIResourceList) this.getObject("evolution-chain", offset, limit, "APIResourceList");
     }
 
     @Override
     public NamedAPIResourceList getEvolutionTriggerList(int offset, int limit) {
-        String fullpath = "evolution-trigger/?limit=" + limit + "&" + "offset=" + offset;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (NamedAPIResourceList) pokeService.getCache().get(fullpath);
-        }
-        return (NamedAPIResourceList) pokeService.getResource(fullpath, "NamedAPIResourceList");
+        return (NamedAPIResourceList) this.getObject("evolution-trigger", offset, limit, "NamedAPIResourceList");
     }
 
     @Override
     public NamedAPIResourceList getGenerationList(int offset, int limit) {
-        String fullpath = "generation/?limit=" + limit + "&" + "offset=" + offset;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (NamedAPIResourceList) pokeService.getCache().get(fullpath);
-        }
-        return (NamedAPIResourceList) pokeService.getResource(fullpath, "NamedAPIResourceList");
+        return (NamedAPIResourceList) this.getObject("generation", offset, limit, "NamedAPIResourceList");
     }
 
     @Override
     public NamedAPIResourceList getPokedexList(int offset, int limit) {
-        String fullpath = "pokedex/?limit=" + limit + "&" + "offset=" + offset;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (NamedAPIResourceList) pokeService.getCache().get(fullpath);
-        }
-        return (NamedAPIResourceList) pokeService.getResource(fullpath, "NamedAPIResourceList");
+        return (NamedAPIResourceList) this.getObject("pokedex", offset, limit, "NamedAPIResourceList");
     }
 
     @Override
     public NamedAPIResourceList getVersionList(int offset, int limit) {
-        String fullpath = "version/?limit=" + limit + "&" + "offset=" + offset;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (NamedAPIResourceList) pokeService.getCache().get(fullpath);
-        }
-        return (NamedAPIResourceList) pokeService.getResource(fullpath, "NamedAPIResourceList");
+        return (NamedAPIResourceList) this.getObject("version", offset, limit, "NamedAPIResourceList");
     }
 
     @Override
     public NamedAPIResourceList getVersionGroupList(int offset, int limit) {
-        String fullpath = "version-group/?limit=" + limit + "&" + "offset=" + offset;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (NamedAPIResourceList) pokeService.getCache().get(fullpath);
-        }
-        return (NamedAPIResourceList) pokeService.getResource(fullpath, "NamedAPIResourceList");
+        return (NamedAPIResourceList) this.getObject("version-group", offset, limit, "NamedAPIResourceList");
     }
 
     @Override
     public NamedAPIResourceList getItemList(int offset, int limit) {
-        String fullpath = "item/?limit=" + limit + "&" + "offset=" + offset;
-        if (pokeService.getCache().contains("fullpath")) {
-            return (NamedAPIResourceList) pokeService.getCache().get("fullpath");
-        }
-        return (NamedAPIResourceList) pokeService.getResource(fullpath, "NamedAPIResourceList");
+        return (NamedAPIResourceList) this.getObject("item", offset, limit, "NamedAPIResourceList");
     }
 
     @Override
     public NamedAPIResourceList getItemAttributeList(int offset, int limit) {
-        String fullpath = "item-attribute/?limit=" + limit + "&" + "offset=" + offset;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (NamedAPIResourceList) pokeService.getCache().get(fullpath);
-        }
-        return (NamedAPIResourceList) pokeService.getResource(fullpath, "NamedAPIResourceList");
+        return (NamedAPIResourceList) this.getObject("item-attribute", offset, limit, "NamedAPIResourceList");
     }
 
     @Override
     public NamedAPIResourceList getItemCategoryList(int offset, int limit) {
-        String fullpath = "item-category/?limit=" + limit + "&" + "offset=" + offset;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (NamedAPIResourceList) pokeService.getCache().get(fullpath);
-        }
-        return (NamedAPIResourceList) pokeService.getResource(fullpath, "NamedAPIResourceList");
+        return (NamedAPIResourceList) this.getObject("item-category", offset, limit, "NamedAPIResourceList");
     }
 
     @Override
     public NamedAPIResourceList getItemFlingEffectList(int offset, int limit) {
-        String fullpath = "item-fling-effect/?limit=" + limit + "&" + "offset=" + offset;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (NamedAPIResourceList) pokeService.getCache().get(fullpath);
-        }
-        return (NamedAPIResourceList) pokeService.getResource(fullpath, "NamedAPIResourceList");
+        return (NamedAPIResourceList) this.getObject("item-fling-effect", offset, limit, "NamedAPIResourceList");
     }
 
     @Override
     public NamedAPIResourceList getItemPocketList(int offset, int limit) {
-        String fullpath = "item-pocket/?limit=" + limit + "&" + "offset=" + offset;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (NamedAPIResourceList) pokeService.getCache().get(fullpath);
-        }
-        return (NamedAPIResourceList) pokeService.getResource(fullpath, "NamedAPIResourceList");
+        return (NamedAPIResourceList) this.getObject("item-pocket", offset, limit, "NamedAPIResourceList");
     }
 
     @Override
     public NamedAPIResourceList getLocationList(int offset, int limit) {
-        String fullpath = "location/?limit=" + limit + "&" + "offset=" + offset;
-        if (pokeService.getCache().contains("fullpath")) {
-            return (NamedAPIResourceList) pokeService.getCache().get("fullpath");
-        }
-        return (NamedAPIResourceList) pokeService.getResource(fullpath, "NamedAPIResourceList");
+        return (NamedAPIResourceList) this.getObject("location", offset, limit, "NamedAPIResourceList");
     }
 
     @Override
     public NamedAPIResourceList getLocationAreaList(int offset, int limit) {
-        String fullpath = "location-area/?limit=" + limit + "&" + "offset=" + offset;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (NamedAPIResourceList) pokeService.getCache().get(fullpath);
-        }
-        return (NamedAPIResourceList) pokeService.getResource(fullpath, "NamedAPIResourceList");
+        return (NamedAPIResourceList) this.getObject("location-area", offset, limit, "NamedAPIResourceList");
     }
 
     @Override
     public NamedAPIResourceList getPalParkAreaList(int offset, int limit) {
-        String fullpath = "pal-park-area/?limit=" + limit + "&" + "offset=" + offset;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (NamedAPIResourceList) pokeService.getCache().get(fullpath);
-        }
-        return (NamedAPIResourceList) pokeService.getResource(fullpath, "NamedAPIResourceList");
+        return (NamedAPIResourceList) this.getObject("pal-park-area", offset, limit, "NamedAPIResourceList");
     }
 
     @Override
     public NamedAPIResourceList getRegionList(int offset, int limit) {
-        String fullpath = "region/?limit=" + limit + "&" + "offset=" + offset;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (NamedAPIResourceList) pokeService.getCache().get(fullpath);
-        }
-        return (NamedAPIResourceList) pokeService.getResource(fullpath, "NamedAPIResourceList");
+        return (NamedAPIResourceList) this.getObject("region", offset, limit, "NamedAPIResourceList");
     }
 
     @Override
     public APIResourceList getMachineList(int offset, int limit) {
-        String fullpath = "machine/?limit=" + limit + "&" + "offset=" + offset;
-        if (pokeService.getCache().contains("fullpath")) {
-            return (APIResourceList) pokeService.getCache().get("fullpath");
-        }
-        return (APIResourceList) pokeService.getResource(fullpath, "APIResourceList");
+        return (APIResourceList) this.getObject("machine", offset, limit, "APIResourceList");
     }
 
     @Override
     public NamedAPIResourceList getMoveList(int offset, int limit) {
-        String fullpath = "move/?limit=" + limit + "&" + "offset=" + offset;
-        if (pokeService.getCache().contains("fullpath")) {
-            return (NamedAPIResourceList) pokeService.getCache().get("fullpath");
-        }
-        return (NamedAPIResourceList) pokeService.getResource(fullpath, "NamedAPIResourceList");
+        return (NamedAPIResourceList) this.getObject("move", offset, limit, "NamedAPIResourceList");
     }
 
     @Override
     public NamedAPIResourceList getMoveAilmentList(int offset, int limit) {
-        String fullpath = "move-ailment/?limit=" + limit + "&" + "offset=" + offset;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (NamedAPIResourceList) pokeService.getCache().get(fullpath);
-        }
-        return (NamedAPIResourceList) pokeService.getResource(fullpath, "NamedAPIResourceList");
+        return (NamedAPIResourceList) this.getObject("move-ailment", offset, limit, "NamedAPIResourceList");
     }
 
     @Override
     public NamedAPIResourceList getMoveBattleStyleList(int offset, int limit) {
-        String fullpath = "move-battle-style/?limit=" + limit + "&" + "offset=" + offset;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (NamedAPIResourceList) pokeService.getCache().get(fullpath);
-        }
-        return (NamedAPIResourceList) pokeService.getResource(fullpath, "NamedAPIResourceList");
+        return (NamedAPIResourceList) this.getObject("move-battle-style", offset, limit, "NamedAPIResourceList");
     }
 
     @Override
     public NamedAPIResourceList getMoveCategoryList(int offset, int limit) {
-        String fullpath = "move-category/?limit=" + limit + "&" + "offset=" + offset;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (NamedAPIResourceList) pokeService.getCache().get(fullpath);
-        }
-        return (NamedAPIResourceList) pokeService.getResource(fullpath, "NamedAPIResourceList");
+        return (NamedAPIResourceList) this.getObject("move-category", offset, limit, "NamedAPIResourceList");
     }
 
     @Override
     public NamedAPIResourceList getMoveDamageClassList(int offset, int limit) {
-        String fullpath = "move-damage-class/?limit=" + limit + "&" + "offset=" + offset;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (NamedAPIResourceList) pokeService.getCache().get(fullpath);
-        }
-        return (NamedAPIResourceList) pokeService.getResource(fullpath, "NamedAPIResourceList");
+        return (NamedAPIResourceList) this.getObject("move-damage-class", offset, limit, "NamedAPIResourceList");
     }
 
     @Override
     public NamedAPIResourceList getMoveLearnMethodList(int offset, int limit) {
-        String fullpath = "move-learn-method/?limit=" + limit + "&" + "offset=" + offset;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (NamedAPIResourceList) pokeService.getCache().get(fullpath);
-        }
-        return (NamedAPIResourceList) pokeService.getResource(fullpath, "NamedAPIResourceList");
+        return (NamedAPIResourceList) this.getObject("move-learn-method", offset, limit, "NamedAPIResourceList");
     }
 
     @Override
     public NamedAPIResourceList getMoveTargetList(int offset, int limit) {
-        String fullpath = "move-target/?limit=" + limit + "&" + "offset=" + offset;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (NamedAPIResourceList) pokeService.getCache().get(fullpath);
-        }
-        return (NamedAPIResourceList) pokeService.getResource(fullpath, "NamedAPIResourceList");
+        return (NamedAPIResourceList) this.getObject("move-target", offset, limit, "NamedAPIResourceList");
     }
 
     @Override
     public NamedAPIResourceList getAbilityList(int offset, int limit) {
-        String fullpath = "ability/?limit=" + limit + "&" + "offset=" + offset;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (NamedAPIResourceList) pokeService.getCache().get(fullpath);
-        }
-        return (NamedAPIResourceList) pokeService.getResource(fullpath, "NamedAPIResourceList");
+        return (NamedAPIResourceList) this.getObject("ability", offset, limit, "NamedAPIResourceList");
     }
 
     @Override
     public APIResourceList getCharacteristicList(int offset, int limit) {
-        String fullpath = "characteristic/?limit=" + limit + "&" + "offset=" + offset;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (APIResourceList) pokeService.getCache().get(fullpath);
-        }
-        return (APIResourceList) pokeService.getResource(fullpath, "APIResourceList");
+        return (APIResourceList) this.getObject("characteristic", offset, limit, "APIResourceList");
     }
 
     @Override
     public NamedAPIResourceList getEggGroupList(int offset, int limit) {
-        String fullpath = "egg-group/?limit=" + limit + "&" + "offset=" + offset;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (NamedAPIResourceList) pokeService.getCache().get(fullpath);
-        }
-        return (NamedAPIResourceList) pokeService.getResource(fullpath, "NamedAPIResourceList");
+        return (NamedAPIResourceList) this.getObject("egg-group", offset, limit, "NamedAPIResourceList");
     }
 
     @Override
     public NamedAPIResourceList getGenderList(int offset, int limit) {
-        String fullpath = "gender/?limit=" + limit + "&" + "offset=" + offset;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (NamedAPIResourceList) pokeService.getCache().get(fullpath);
-        }
-        return (NamedAPIResourceList) pokeService.getResource(fullpath, "NamedAPIResourceList");
+        return (NamedAPIResourceList) this.getObject("gender", offset, limit, "NamedAPIResourceList");
     }
 
     @Override
     public NamedAPIResourceList getGrowthRateList(int offset, int limit) {
-        String fullpath = "growth-rate/?limit=" + limit + "&" + "offset=" + offset;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (NamedAPIResourceList) pokeService.getCache().get(fullpath);
-        }
-        return (NamedAPIResourceList) pokeService.getResource(fullpath, "NamedAPIResourceList");
+        return (NamedAPIResourceList) this.getObject("growth-rate", offset, limit, "NamedAPIResourceList");
     }
 
     @Override
     public NamedAPIResourceList getNatureList(int offset, int limit) {
-        String fullpath = "nature/?limit=" + limit + "&" + "offset=" + offset;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (NamedAPIResourceList) pokeService.getCache().get(fullpath);
-        }
-        return (NamedAPIResourceList) pokeService.getResource(fullpath, "NamedAPIResourceList");
+        return (NamedAPIResourceList) this.getObject("nature", offset, limit, "NamedAPIResourceList");
     }
 
     @Override
     public NamedAPIResourceList getPokeathlonStatList(int offset, int limit) {
-        String fullpath = "pokeathlon-stat/?limit=" + limit + "&" + "offset=" + offset;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (NamedAPIResourceList) pokeService.getCache().get(fullpath);
-        }
-        return (NamedAPIResourceList) pokeService.getResource(fullpath, "NamedAPIResourceList");
+        return (NamedAPIResourceList) this.getObject("pokeathlon-stat", offset, limit, "NamedAPIResourceList");
     }
 
     @Override
     public NamedAPIResourceList getPokemonList(int offset, int limit) {
-        String fullpath = "pokemon/?limit=" + limit + "&" + "offset=" + offset;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (NamedAPIResourceList) pokeService.getCache().get(fullpath);
-        }
-        return (NamedAPIResourceList) pokeService.getResource(fullpath, "NamedAPIResourceList");
+        return (NamedAPIResourceList) this.getObject("pokemon", offset, limit, "NamedAPIResourceList");
     }
 
     @Override
     public NamedAPIResourceList getPokemonColorList(int offset, int limit) {
-        String fullpath = "pokemon-color/?limit=" + limit + "&" + "offset=" + offset;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (NamedAPIResourceList) pokeService.getCache().get(fullpath);
-        }
-        return (NamedAPIResourceList) pokeService.getResource(fullpath, "NamedAPIResourceList");
+        return (NamedAPIResourceList) this.getObject("pokemon-color", offset, limit, "NamedAPIResourceList");
     }
 
     @Override
     public NamedAPIResourceList getPokemonFormList(int offset, int limit) {
-        String fullpath = "pokemon-form/?limit=" + limit + "&" + "offset=" + offset;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (NamedAPIResourceList) pokeService.getCache().get(fullpath);
-        }
-        return (NamedAPIResourceList) pokeService.getResource(fullpath, "NamedAPIResourceList");
+        return (NamedAPIResourceList) this.getObject("pokemon-form", offset, limit, "NamedAPIResourceList");
     }
 
     @Override
     public NamedAPIResourceList getPokemonHabitatList(int offset, int limit) {
-        String fullpath = "pokemon-habitat/?limit=" + limit + "&" + "offset=" + offset;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (NamedAPIResourceList) pokeService.getCache().get(fullpath);
-        }
-        return (NamedAPIResourceList) pokeService.getResource(fullpath, "NamedAPIResourceList");
+        return (NamedAPIResourceList) this.getObject("pokemon-habitat", offset, limit, "NamedAPIResourceList");
     }
 
     @Override
     public NamedAPIResourceList getPokemonShapeList(int offset, int limit) {
-        String fullpath = "pokemon-shape/?limit=" + limit + "&" + "offset=" + offset;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (NamedAPIResourceList) pokeService.getCache().get(fullpath);
-        }
-        return (NamedAPIResourceList) pokeService.getResource(fullpath, "NamedAPIResourceList");
+        return (NamedAPIResourceList) this.getObject("pokemon-shape", offset, limit, "NamedAPIResourceList");
     }
 
     @Override
     public NamedAPIResourceList getPokemonSpeciesList(int offset, int limit) {
-        String fullpath = "pokemon-species/?limit=" + limit + "&" + "offset=" + offset;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (NamedAPIResourceList) pokeService.getCache().get(fullpath);
-        }
-        return (NamedAPIResourceList) pokeService.getResource(fullpath, "NamedAPIResourceList");
+        return (NamedAPIResourceList) this.getObject("pokemon-species", offset, limit, "NamedAPIResourceList");
     }
 
     @Override
     public NamedAPIResourceList getStatList(int offset, int limit) {
-        String fullpath = "stat/?limit=" + limit + "&" + "offset=" + offset;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (NamedAPIResourceList) pokeService.getCache().get(fullpath);
-        }
-        return (NamedAPIResourceList) pokeService.getResource(fullpath, "NamedAPIResourceList");
+        return (NamedAPIResourceList) this.getObject("stat", offset, limit, "NamedAPIResourceList");
     }
 
     @Override
     public NamedAPIResourceList getTypeList(int offset, int limit) {
-        String fullpath = "type/?limit=" + limit + "&" + "offset=" + offset;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (NamedAPIResourceList) pokeService.getCache().get(fullpath);
-        }
-        return (NamedAPIResourceList) pokeService.getResource(fullpath, "NamedAPIResourceList");
+        return (NamedAPIResourceList) this.getObject("type", offset, limit, "NamedAPIResourceList");
     }
 
     @Override
     public NamedAPIResourceList getLanguageList(int offset, int limit) {
-        String fullpath = "language/?limit=" + limit + "&" + "offset=" + offset;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (NamedAPIResourceList) pokeService.getCache().get(fullpath);
-        }
-        return (NamedAPIResourceList) pokeService.getResource(fullpath, "NamedAPIResourceList");
+        return (NamedAPIResourceList) this.getObject("language", offset, limit, "NamedAPIResourceList");
     }
 
     @Override
     public Berry getBerry(int id) {
-        String fullpath = "berry/" + id;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (Berry) pokeService.getCache().get(fullpath);
-        }
-        return (Berry) pokeService.getResource(fullpath, "Berry");
+        return (Berry) this.getObject("berry", id, "Berry");
     }
 
     @Override
     public Berry getBerry(String name) {
-        String fullpath = "berry/" + name;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (Berry) pokeService.getCache().get(fullpath);
-        }
-        return (Berry) pokeService.getResource(fullpath, "Berry");
+        return (Berry) this.getObject("berry", name, "Berry");
     }
 
     @Override
     public BerryFirmness getBerryFirmness(int id) {
-        String fullpath = "berry-firmness/" + id;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (BerryFirmness) pokeService.getCache().get(fullpath);
-        }
-        return (BerryFirmness) pokeService.getResource(fullpath, "BerryFirmness");
+        return (BerryFirmness) this.getObject("berry-firmness", id, "BerryFirmness");
     }
 
     @Override
     public BerryFirmness getBerryFirmness(String name) {
-        String fullpath = "berry-firmness/" + name;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (BerryFirmness) pokeService.getCache().get(fullpath);
-        }
-        return (BerryFirmness) pokeService.getResource(fullpath, "BerryFirmness");
+        return (BerryFirmness) this.getObject("berry-firmness", name, "BerryFirmness");
     }
 
     @Override
     public BerryFlavor getBerryFlavor(int id) {
-        String fullpath = "berry-flavor/" + id;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (BerryFlavor) pokeService.getCache().get(fullpath);
-        }
-        return (BerryFlavor) pokeService.getResource(fullpath, "BerryFlavor");
+        return (BerryFlavor) this.getObject("berry-flavor", id, "BerryFlavor");
     }
 
     @Override
     public BerryFlavor getBerryFlavor(String name) {
-        String fullpath = "berry-flavor/" + name;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (BerryFlavor) pokeService.getCache().get(fullpath);
-        }
-        return (BerryFlavor) pokeService.getResource(fullpath, "BerryFlavor");
+        return (BerryFlavor) this.getObject("berry-flavor", name, "BerryFlavor");
     }
 
     @Override
     public ContestType getContestType(int id) {
-        String fullpath = "contest-type/" + id;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (ContestType) pokeService.getCache().get(fullpath);
-        }
-        return (ContestType) pokeService.getResource(fullpath, "ContestType");
+        return (ContestType) this.getObject("contest-type", id, "ContestType");
     }
 
     @Override
     public ContestType getContestType(String name) {
-        String fullpath = "contest-type/" + name;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (ContestType) pokeService.getCache().get(fullpath);
-        }
-        return (ContestType) pokeService.getResource(fullpath, "ContestType");
+        return (ContestType) this.getObject("contest-type", name, "ContestType");
     }
 
     @Override
     public ContestEffect getContestEffect(int id) {
-        String fullpath = "contest-effect/" + id;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (ContestEffect) pokeService.getCache().get(fullpath);
-        }
-        return (ContestEffect) pokeService.getResource(fullpath, "ContestEffect");
+        return (ContestEffect) this.getObject("contest-effect", id, "ContestEffect");
     }
 
     @Override
     public SuperContestEffect getSuperContestEffect(int id) {
-        String fullpath = "super-contest-effect/" + id;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (SuperContestEffect) pokeService.getCache().get(fullpath);
-        }
-        return (SuperContestEffect) pokeService.getResource(fullpath, "SuperContestEffect");
+        return (SuperContestEffect) this.getObject("super-contest-effect", id, "SuperContestEffect");
     }
 
     @Override
     public EncounterMethod getEncounterMethod(int id) {
-        String fullpath = "encounter-method/" + id;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (EncounterMethod) pokeService.getCache().get(fullpath);
-        }
-        return (EncounterMethod) pokeService.getResource(fullpath, "EncounterMethod");
+        return (EncounterMethod) this.getObject("encounter-method", id, "EncounterMethod");
     }
 
     @Override
     public EncounterMethod getEncounterMethod(String name) {
-        String fullpath = "encounter-method/" + name;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (EncounterMethod) pokeService.getCache().get(fullpath);
-        }
-        return (EncounterMethod) pokeService.getResource(fullpath, "EncounterMethod");
+        return (EncounterMethod) this.getObject("encounter-method", name, "EncounterMethod");
     }
 
     @Override
     public EncounterCondition getEncounterCondition(int id) {
-        String fullpath = "encounter-condition/" + id;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (EncounterCondition) pokeService.getCache().get(fullpath);
-        }
-        return (EncounterCondition) pokeService.getResource(fullpath, "EncounterCondition");
+        return (EncounterCondition) this.getObject("encounter-condition", id, "EncounterCondition");
     }
 
     @Override
     public EncounterCondition getEncounterCondition(String name) {
-        String fullpath = "encounter-condition/" + name;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (EncounterCondition) pokeService.getCache().get(fullpath);
-        }
-        return (EncounterCondition) pokeService.getResource(fullpath, "EncounterCondition");
+        return (EncounterCondition) this.getObject("encounter-condition", name, "EncounterCondition");
     }
 
     @Override
     public EncounterConditionValue getEncounterConditionValue(int id) {
-        String fullpath = "encounter-condition-value/" + id;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (EncounterConditionValue) pokeService.getCache().get(fullpath);
-        }
-        return (EncounterConditionValue) pokeService.getResource(fullpath, "EncounterConditionValue");
+        return (EncounterConditionValue) this.getObject("encounter-condition-value", id, "EncounterConditionValue");
     }
 
     @Override
     public EncounterConditionValue getEncounterConditionValue(String name) {
-        String fullpath = "encounter-condition-value/" + name;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (EncounterConditionValue) pokeService.getCache().get(fullpath);
-        }
-        return (EncounterConditionValue) pokeService.getResource(fullpath, "EncounterConditionValue");
+        return (EncounterConditionValue) this.getObject("encounter-condition-value", name, "EncounterConditionValue");
     }
 
     @Override
     public EvolutionChain getEvolutionChain(int id) {
-        String fullpath = "evolution-chain/" + id;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (EvolutionChain) pokeService.getCache().get(fullpath);
-        }
-        return (EvolutionChain) pokeService.getResource(fullpath, "EvolutionChain");
+        return (EvolutionChain) this.getObject("evolution-chain", id, "EvolutionChain");
     }
 
     @Override
     public EvolutionTrigger getEvolutionTrigger(int id) {
-        String fullpath = "evolution-trigger/" + id;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (EvolutionTrigger) pokeService.getCache().get(fullpath);
-        }
-        return (EvolutionTrigger) pokeService.getResource(fullpath, "EvolutionTrigger");
+        return (EvolutionTrigger) this.getObject("evolution-trigger", id, "EvolutionTrigger");
     }
 
     @Override
     public EvolutionTrigger getEvolutionTrigger(String name) {
-        String fullpath = "evolution-trigger/" + name;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (EvolutionTrigger) pokeService.getCache().get(fullpath);
-        }
-        return (EvolutionTrigger) pokeService.getResource(fullpath, "EvolutionTrigger");
+        return (EvolutionTrigger) this.getObject("evolution-trigger", name, "EvolutionTrigger");
     }
 
     @Override
     public Generation getGeneration(int id) {
-        String fullpath = "generation/" + id;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (Generation) pokeService.getCache().get(fullpath);
-        }
-        return (Generation) pokeService.getResource(fullpath, "Generation");
+        return (Generation) this.getObject("generation", id, "Generation");
     }
 
     @Override
     public Generation getGeneration(String name) {
-        String fullpath = "generation/" + name;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (Generation) pokeService.getCache().get(fullpath);
-        }
-        return (Generation) pokeService.getResource(fullpath, "Generation");
+        return (Generation) this.getObject("generation", name, "Generation");
     }
 
     @Override
     public Pokedex getPokedex(int id) {
-        String fullpath = "pokedex/" + id;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (Pokedex) pokeService.getCache().get(fullpath);
-        }
-        return (Pokedex) pokeService.getResource(fullpath, "Pokedex");
+        return (Pokedex) this.getObject("pokedex", id, "Pokedex");
     }
 
     @Override
     public Pokedex getPokedex(String name) {
-        String fullpath = "pokedex/" + name;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (Pokedex) pokeService.getCache().get(fullpath);
-        }
-        return (Pokedex) pokeService.getResource(fullpath, "Pokedex");
+        return (Pokedex) this.getObject("pokedex", name, "Pokedex");
     }
 
     @Override
     public Version getVersion(int id) {
-        String fullpath = "version/" + id;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (Version) pokeService.getCache().get(fullpath);
-        }
-        return (Version) pokeService.getResource(fullpath, "Version");
+        return (Version) this.getObject("version", id, "Version");
     }
 
     @Override
     public Version getVersion(String name) {
-        String fullpath = "version/" + name;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (Version) pokeService.getCache().get(fullpath);
-        }
-        return (Version) pokeService.getResource(fullpath, "Version");
+        return (Version) this.getObject("version", name, "Version");
     }
 
     @Override
     public VersionGroup getVersionGroup(int id) {
-        String fullpath = "version-group/" + id;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (VersionGroup) pokeService.getCache().get(fullpath);
-        }
-        return (VersionGroup) pokeService.getResource(fullpath, "VersionGroup");
+        return (VersionGroup) this.getObject("version-group", id, "VersionGroup");
     }
 
     @Override
     public VersionGroup getVersionGroup(String name) {
-        String fullpath = "version-group/" + name;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (VersionGroup) pokeService.getCache().get(fullpath);
-        }
-        return (VersionGroup) pokeService.getResource(fullpath, "VersionGroup");
+        return (VersionGroup) this.getObject("version-group", name, "VersionGroup");
     }
 
     @Override
     public Item getItem(int id) {
-        String fullpath = "item/" + id;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (Item) pokeService.getCache().get(fullpath);
-        }
-        return (Item) pokeService.getResource(fullpath, "Item");
+        return (Item) this.getObject("item", id, "Item");
     }
 
     @Override
     public Item getItem(String name) {
-        String fullpath = "item/" + name;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (Item) pokeService.getCache().get(fullpath);
-        }
-        return (Item) pokeService.getResource(fullpath, "Item");
+        return (Item) this.getObject("item", name, "Item");
     }
 
     @Override
     public ItemAttribute getItemAttribute(int id) {
-        String fullpath = "item-attribute/" + id;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (ItemAttribute) pokeService.getCache().get(fullpath);
-        }
-        return (ItemAttribute) pokeService.getResource(fullpath, "ItemAttribute");
+        return (ItemAttribute) this.getObject("item-attribute", id, "ItemAttribute");
     }
 
     @Override
     public ItemAttribute getItemAttribute(String name) {
-        String fullpath = "item-attribute/" + name;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (ItemAttribute) pokeService.getCache().get(fullpath);
-        }
-        return (ItemAttribute) pokeService.getResource(fullpath, "ItemAttribute");
+        return (ItemAttribute) this.getObject("item-attribute", name, "ItemAttribute");
     }
 
     @Override
     public ItemCategory getItemCategory(int id) {
-        String fullpath = "item-category/" + id;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (ItemCategory) pokeService.getCache().get(fullpath);
-        }
-        return (ItemCategory) pokeService.getResource(fullpath, "ItemCategory");
+        return (ItemCategory) this.getObject("item-category", id, "ItemCategory");
     }
 
     @Override
     public ItemCategory getItemCategory(String name) {
-        String fullpath = "item-category/" + name;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (ItemCategory) pokeService.getCache().get(fullpath);
-        }
-        return (ItemCategory) pokeService.getResource(fullpath, "ItemCategory");
+        return (ItemCategory) this.getObject("item-category", name, "ItemCategory");
     }
 
     @Override
     public ItemFlingEffect getItemFlingEffect(int id) {
-        String fullpath = "item-fling-effect/" + id;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (ItemFlingEffect) pokeService.getCache().get(fullpath);
-        }
-        return (ItemFlingEffect) pokeService.getResource(fullpath, "ItemFlingEffect");
+        return (ItemFlingEffect) this.getObject("item-fling-effect", id, "ItemFlingEffect");
     }
 
     @Override
     public ItemFlingEffect getItemFlingEffect(String name) {
-        String fullpath = "item-fling-effect/" + name;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (ItemFlingEffect) pokeService.getCache().get(fullpath);
-        }
-        return (ItemFlingEffect) pokeService.getResource(fullpath, "ItemFlingEffect");
+        return (ItemFlingEffect) this.getObject("item-fling-effect", name, "ItemFlingEffect");
     }
 
     @Override
     public ItemPocket getItemPocket(int id) {
-        String fullpath = "item-pocket/" + id;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (ItemPocket) pokeService.getCache().get(fullpath);
-        }
-        return (ItemPocket) pokeService.getResource(fullpath, "ItemPocket");
+        return (ItemPocket) this.getObject("item-pocket", id, "ItemPocket");
     }
 
     @Override
     public ItemPocket getItemPocket(String name) {
-        String fullpath = "item-pocket/" + name;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (ItemPocket) pokeService.getCache().get(fullpath);
-        }
-        return (ItemPocket) pokeService.getResource(fullpath, "ItemPocket");
+        return (ItemPocket) this.getObject("item-pocket", name, "ItemPocket");
     }
 
     @Override
     public Location getLocation(int id) {
-        String fullpath = "location/" + id;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (Location) pokeService.getCache().get(fullpath);
-        }
-        return (Location) pokeService.getResource(fullpath, "Location");
+        return (Location) this.getObject("location", id, "Location");
     }
 
     @Override
     public Location getLocation(String name) {
-        String fullpath = "location/" + name;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (Location) pokeService.getCache().get(fullpath);
-        }
-        return (Location) pokeService.getResource(fullpath, "Location");
+        return (Location) this.getObject("location", name, "Location");
     }
 
     @Override
     public LocationArea getLocationArea(int id) {
-        String fullpath = "location-area/" + id;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (LocationArea) pokeService.getCache().get(fullpath);
-        }
-        return (LocationArea) pokeService.getResource(fullpath, "LocationArea");
+        return (LocationArea) this.getObject("location-area", id, "LocationArea");
     }
 
     @Override
     public LocationArea getLocationArea(String name) {
-        String fullpath = "location-area/" + name;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (LocationArea) pokeService.getCache().get(fullpath);
-        }
-        return (LocationArea) pokeService.getResource(fullpath, "LocationArea");
+        return (LocationArea) this.getObject("location-area", name, "LocationArea");
     }
 
     @Override
     public PalParkArea getPalParkArea(int id) {
-        String fullpath = "pal-park-area/" + id;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (PalParkArea) pokeService.getCache().get(fullpath);
-        }
-        return (PalParkArea) pokeService.getResource(fullpath, "PalParkArea");
+        return (PalParkArea) this.getObject("pal-park-area", id, "PalParkArea");
     }
 
     @Override
     public PalParkArea getPalParkArea(String name) {
-        String fullpath = "pal-park-area/" + name;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (PalParkArea) pokeService.getCache().get(fullpath);
-        }
-        return (PalParkArea) pokeService.getResource(fullpath, "PalParkArea");
+        return (PalParkArea) this.getObject("pal-park-area", name, "PalParkArea");
     }
 
     @Override
     public Region getRegion(int id) {
-        String fullpath = "region/" + id;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (Region) pokeService.getCache().get(fullpath);
-        }
-        return (Region) pokeService.getResource(fullpath, "Region");
+        return (Region) this.getObject("region", id, "Region");
     }
 
     @Override
     public Region getRegion(String name) {
-        String fullpath = "region/" + name;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (Region) pokeService.getCache().get(fullpath);
-        }
-        return (Region) pokeService.getResource(fullpath, "Region");
+        return (Region) this.getObject("region", name, "Region");
     }
 
     @Override
     public Machine getMachine(int id) {
-        String fullpath = "machine/" + id;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (Machine) pokeService.getCache().get(fullpath);
-        }
-        return (Machine) pokeService.getResource(fullpath, "Machine");
+        return (Machine) this.getObject("machine", id, "Machine");
     }
 
     @Override
     public Move getMove(int id) {
-        String fullpath = "move/" + id;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (Move) pokeService.getCache().get(fullpath);
-        }
-        return (Move) pokeService.getResource(fullpath, "Move");
+        return (Move) this.getObject("move", id, "Move");
     }
 
     @Override
     public Move getMove(String name) {
-        String fullpath = "move/" + name;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (Move) pokeService.getCache().get(fullpath);
-        }
-        return (Move) pokeService.getResource(fullpath, "Move");
+        return (Move) this.getObject("move", name, "Move");
     }
 
     @Override
     public MoveAilment getMoveAilment(int id) {
-        String fullpath = "move-ailment/" + id;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (MoveAilment) pokeService.getCache().get(fullpath);
-        }
-        return (MoveAilment) pokeService.getResource(fullpath, "MoveAilment");
+        return (MoveAilment) this.getObject("move-ailment", id, "MoveAilment");
     }
 
     @Override
     public MoveAilment getMoveAilment(String name) {
-        String fullpath = "move-ailment/" + name;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (MoveAilment) pokeService.getCache().get(fullpath);
-        }
-        return (MoveAilment) pokeService.getResource(fullpath, "MoveAilment");
+        return (MoveAilment) this.getObject("move-ailment", name, "MoveAilment");
     }
 
     @Override
     public MoveBattleStyle getMoveBattleStyle(int id) {
-        String fullpath = "move-battle-style/" + id;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (MoveBattleStyle) pokeService.getCache().get(fullpath);
-        }
-        return (MoveBattleStyle) pokeService.getResource(fullpath, "MoveBattleStyle");
+        return (MoveBattleStyle) this.getObject("move-battle-style", id, "MoveBattleStyle");
     }
 
     @Override
     public MoveBattleStyle getMoveBattleStyle(String name) {
-        String fullpath = "move-battle-style/" + name;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (MoveBattleStyle) pokeService.getCache().get(fullpath);
-        }
-        return (MoveBattleStyle) pokeService.getResource(fullpath, "MoveBattleStyle");
+        return (MoveBattleStyle) this.getObject("move-battle-style", name, "MoveBattleStyle");
     }
 
     @Override
     public MoveCategory getMoveCategory(int id) {
-        String fullpath = "move-category/" + id;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (MoveCategory) pokeService.getCache().get(fullpath);
-        }
-        return (MoveCategory) pokeService.getResource(fullpath, "MoveCategory");
+        return (MoveCategory) this.getObject("move-category", id, "MoveCategory");
     }
 
     @Override
     public MoveCategory getMoveCategory(String name) {
-        String fullpath = "move-category/" + name;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (MoveCategory) pokeService.getCache().get(fullpath);
-        }
-        return (MoveCategory) pokeService.getResource(fullpath, "MoveCategory");
+        return (MoveCategory) this.getObject("move-category", name, "MoveCategory");
     }
 
     @Override
     public MoveDamageClass getMoveDamageClass(int id) {
-        String fullpath = "move-damage-class/" + id;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (MoveDamageClass) pokeService.getCache().get(fullpath);
-        }
-        return (MoveDamageClass) pokeService.getResource(fullpath, "MoveDamageClass");
+        return (MoveDamageClass) this.getObject("move-damage-class", id, "MoveDamageClass");
     }
 
     @Override
     public MoveDamageClass getMoveDamageClass(String name) {
-        String fullpath = "move-damage-class/" + name;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (MoveDamageClass) pokeService.getCache().get(fullpath);
-        }
-        return (MoveDamageClass) pokeService.getResource(fullpath, "MoveDamageClass");
+        return (MoveDamageClass) this.getObject("move-damage-class", name, "MoveDamageClass");
     }
 
     @Override
     public MoveLearnMethod getMoveLearnMethod(int id) {
-        String fullpath = "move-learn-method/" + id;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (MoveLearnMethod) pokeService.getCache().get(fullpath);
-        }
-        return (MoveLearnMethod) pokeService.getResource(fullpath, "MoveLearnMethod");
+        return (MoveLearnMethod) this.getObject("move-learn-method", id, "MoveLearnMethod");
     }
 
     @Override
     public MoveLearnMethod getMoveLearnMethod(String name) {
-        String fullpath = "move-learn-method/" + name;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (MoveLearnMethod) pokeService.getCache().get(fullpath);
-        }
-        return (MoveLearnMethod) pokeService.getResource(fullpath, "MoveLearnMethod");
+        return (MoveLearnMethod) this.getObject("move-learn-method", name, "MoveLearnMethod");
     }
 
     @Override
     public MoveTarget getMoveTarget(int id) {
-        String fullpath = "move-target/" + id;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (MoveTarget) pokeService.getCache().get(fullpath);
-        }
-        return (MoveTarget) pokeService.getResource(fullpath, "MoveTarget");
+        return (MoveTarget) this.getObject("move-target", id, "MoveTarget");
     }
 
     @Override
     public MoveTarget getMoveTarget(String name) {
-        String fullpath = "move-target/" + name;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (MoveTarget) pokeService.getCache().get(fullpath);
-        }
-        return (MoveTarget) pokeService.getResource(fullpath, "MoveTarget");
+        return (MoveTarget) this.getObject("move-target", name, "MoveTarget");
     }
 
     @Override
     public Ability getAbility(int id) {
-        String fullpath = "ability/" + id;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (Ability) pokeService.getCache().get(fullpath);
-        }
-        return (Ability) pokeService.getResource(fullpath, "Ability");
+        return (Ability) this.getObject("ability", id, "Ability");
     }
 
     @Override
     public Ability getAbility(String name) {
-        String fullpath = "ability/" + name;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (Ability) pokeService.getCache().get(fullpath);
-        }
-        return (Ability) pokeService.getResource(fullpath, "Ability");
+        return (Ability) this.getObject("ability", name, "Ability");
     }
 
     @Override
     public Characteristic getCharacteristic(int id) {
-        String fullpath = "characteristic/" + id;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (Characteristic) pokeService.getCache().get(fullpath);
-        }
-        return (Characteristic) pokeService.getResource(fullpath, "Characteristic");
+        return (Characteristic) this.getObject("characteristic", id, "Characteristic");
     }
 
     @Override
     public EggGroup getEggGroup(int id) {
-        String fullpath = "egg-group/" + id;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (EggGroup) pokeService.getCache().get(fullpath);
-        }
-        return (EggGroup) pokeService.getResource(fullpath, "EggGroup");
+        return (EggGroup) this.getObject("egg-group", id, "EggGroup");
     }
 
     @Override
     public EggGroup getEggGroup(String name) {
-        String fullpath = "egg-group/" + name;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (EggGroup) pokeService.getCache().get(fullpath);
-        }
-        return (EggGroup) pokeService.getResource(fullpath, "EggGroup");
+        return (EggGroup) this.getObject("egg-group", name, "EggGroup");
     }
 
     @Override
     public Gender getGender(int id) {
-        String fullpath = "gender/" + id;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (Gender) pokeService.getCache().get(fullpath);
-        }
-        return (Gender) pokeService.getResource(fullpath, "Gender");
+        return (Gender) this.getObject("gender", id, "Gender");
     }
 
     @Override
     public Gender getGender(String name) {
-        String fullpath = "gender/" + name;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (Gender) pokeService.getCache().get(fullpath);
-        }
-        return (Gender) pokeService.getResource(fullpath, "Gender");
+        return (Gender) this.getObject("gender", name, "Gender");
     }
 
     @Override
     public GrowthRate getGrowthRate(int id) {
-        String fullpath = "growth-rate/" + id;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (GrowthRate) pokeService.getCache().get(fullpath);
-        }
-        return (GrowthRate) pokeService.getResource(fullpath, "GrowthRate");
+        return (GrowthRate) this.getObject("growth-rate", id, "GrowthRate");
     }
 
     @Override
     public GrowthRate getGrowthRate(String name) {
-        String fullpath = "growth-rate/" + name;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (GrowthRate) pokeService.getCache().get(fullpath);
-        }
-        return (GrowthRate) pokeService.getResource(fullpath, "GrowthRate");
+        return (GrowthRate) this.getObject("growth-rate", name, "GrowthRate");
     }
 
     @Override
     public Nature getNature(int id) {
-        String fullpath = "nature/" + id;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (Nature) pokeService.getCache().get(fullpath);
-        }
-        return (Nature) pokeService.getResource(fullpath, "Nature");
+        return (Nature) this.getObject("nature", id, "Nature");
     }
 
     @Override
     public Nature getNature(String name) {
-        String fullpath = "nature/" + name;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (Nature) pokeService.getCache().get(fullpath);
-        }
-        return (Nature) pokeService.getResource(fullpath, "Nature");
+        return (Nature) this.getObject("nature", name, "Nature");
     }
 
     @Override
     public PokeathlonStat getPokeathlonStat(int id) {
-        String fullpath = "pokeathlon-stat/" + id;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (PokeathlonStat) pokeService.getCache().get(fullpath);
-        }
-        return (PokeathlonStat) pokeService.getResource(fullpath, "PokeathlonStat");
+        return (PokeathlonStat) this.getObject("pokeathlon-stat", id, "PokeathlonStat");
     }
 
     @Override
     public PokeathlonStat getPokeathlonStat(String name) {
-        String fullpath = "pokeathlon-stat/" + name;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (PokeathlonStat) pokeService.getCache().get(fullpath);
-        }
-        return (PokeathlonStat) pokeService.getResource(fullpath, "PokeathlonStat");
+        return (PokeathlonStat) this.getObject("pokeathlon-stat", name, "PokeathlonStat");
     }
 
     @Override
     public Pokemon getPokemon(int id) {
-        String fullpath = "pokemon/" + id;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (Pokemon) pokeService.getCache().get(fullpath);
-        }
-        return (Pokemon) pokeService.getResource(fullpath, "Pokemon");
+        return (Pokemon) this.getObject("pokemon", id, "Pokemon");
     }
 
     @Override
     public Pokemon getPokemon(String name) {
-        String fullpath = "pokemon/" + name;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (Pokemon) pokeService.getCache().get(fullpath);
-        }
-        return (Pokemon) pokeService.getResource(fullpath, "Pokemon");
+        return (Pokemon) this.getObject("pokemon", name, "Pokemon");
     }
 
     @Override
     public PokemonColor getPokemonColor(int id) {
-        String fullpath = "pokemon-color/" + id;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (PokemonColor) pokeService.getCache().get(fullpath);
-        }
-        return (PokemonColor) pokeService.getResource(fullpath, "PokemonColor");
+        return (PokemonColor) this.getObject("pokemon-color", id, "PokemonColor");
     }
 
     @Override
     public PokemonColor getPokemonColor(String name) {
-        String fullpath = "pokemon-color/" + name;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (PokemonColor) pokeService.getCache().get(fullpath);
-        }
-        return (PokemonColor) pokeService.getResource(fullpath, "PokemonColor");
+        return (PokemonColor) this.getObject("pokemon-color", name, "PokemonColor");
     }
 
     @Override
     public PokemonForm getPokemonForm(int id) {
-        String fullpath = "pokemon-form/" + id;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (PokemonForm) pokeService.getCache().get(fullpath);
-        }
-        return (PokemonForm) pokeService.getResource(fullpath, "PokemonForm");
+        return (PokemonForm) this.getObject("pokemon-form", id, "PokemonForm");
     }
 
     @Override
     public PokemonForm getPokemonForm(String name) {
-        String fullpath = "pokemon-form/" + name;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (PokemonForm) pokeService.getCache().get(fullpath);
-        }
-        return (PokemonForm) pokeService.getResource(fullpath, "PokemonForm");
+        return (PokemonForm) this.getObject("pokemon-form", name, "PokemonForm");
     }
 
     @Override
     public PokemonHabitat getPokemonHabitat(int id) {
-        String fullpath = "pokemon-habitat/" + id;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (PokemonHabitat) pokeService.getCache().get(fullpath);
-        }
-        return (PokemonHabitat) pokeService.getResource(fullpath, "PokemonHabitat");
+        return (PokemonHabitat) this.getObject("pokemon-habitat", id, "PokemonHabitat");
     }
 
     @Override
     public PokemonHabitat getPokemonHabitat(String name) {
-        String fullpath = "pokemon-habitat/" + name;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (PokemonHabitat) pokeService.getCache().get(fullpath);
-        }
-        return (PokemonHabitat) pokeService.getResource(fullpath, "PokemonHabitat");
+        return (PokemonHabitat) this.getObject("pokemon-habitat", name, "PokemonHabitat");
     }
 
     @Override
     public PokemonShape getPokemonShape(int id) {
-        String fullpath = "pokemon-shape/" + id;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (PokemonShape) pokeService.getCache().get(fullpath);
-        }
-        return (PokemonShape) pokeService.getResource(fullpath, "PokemonShape");
+        return (PokemonShape) this.getObject("pokemon-shape", id, "PokemonShape");
     }
 
     @Override
     public PokemonShape getPokemonShape(String name) {
-        String fullpath = "pokemon-shape/" + name;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (PokemonShape) pokeService.getCache().get(fullpath);
-        }
-        return (PokemonShape) pokeService.getResource(fullpath, "PokemonShape");
+        return (PokemonShape) this.getObject("pokemon-shape", name, "PokemonShape");
     }
 
     @Override
     public PokemonSpecies getPokemonSpecies(int id) {
-        String fullpath = "pokemon-species/" + id;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (PokemonSpecies) pokeService.getCache().get(fullpath);
-        }
-        return (PokemonSpecies) pokeService.getResource(fullpath, "PokemonSpecies");
+        return (PokemonSpecies) this.getObject("pokemon-species", id, "PokemonSpecies");
     }
 
     @Override
     public PokemonSpecies getPokemonSpecies(String name) {
-        String fullpath = "pokemon-species/" + name;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (PokemonSpecies) pokeService.getCache().get(fullpath);
-        }
-        return (PokemonSpecies) pokeService.getResource(fullpath, "PokemonSpecies");
+        return (PokemonSpecies) this.getObject("pokemon-species", name, "PokemonSpecies");
     }
 
     @Override
     public Stat getStat(int id) {
-        String fullpath = "stat/" + id;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (Stat) pokeService.getCache().get(fullpath);
-        }
-        return (Stat) pokeService.getResource(fullpath, "Stat");
+        return (Stat) this.getObject("stat", id, "Stat");
     }
 
     @Override
     public Stat getStat(String name) {
-        String fullpath = "stat/" + name;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (Stat) pokeService.getCache().get(fullpath);
-        }
-        return (Stat) pokeService.getResource(fullpath, "Stat");
+        return (Stat) this.getObject("stat", name, "Stat");
     }
 
     @Override
     public Type getType(int id) {
-        String fullpath = "type/" + id;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (Type) pokeService.getCache().get(fullpath);
-        }
-        return (Type) pokeService.getResource(fullpath, "Type");
+        return (Type) this.getObject("type", id, "Type");
     }
 
     @Override
     public Type getType(String name) {
-        String fullpath = "type/" + name;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (Type) pokeService.getCache().get(fullpath);
-        }
-        return (Type) pokeService.getResource(fullpath, "Type");
+        return (Type) this.getObject("type", name, "Type");
     }
 
     @Override
     public Language getLanguage(int id) {
-        String fullpath = "language/" + id;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (Language) pokeService.getCache().get(fullpath);
-        }
-        return (Language) pokeService.getResource(fullpath, "Language");
+        return (Language) this.getObject("language", id, "Language");
     }
 
     @Override
     public Language getLanguage(String name) {
-        String fullpath = "language/" + name;
-        if (pokeService.getCache().contains(fullpath)) {
-            return (Language) pokeService.getCache().get(fullpath);
-        }
-        return (Language) pokeService.getResource(fullpath, "Language");
+        return (Language) this.getObject("language", name, "Language");
     }
 
 }

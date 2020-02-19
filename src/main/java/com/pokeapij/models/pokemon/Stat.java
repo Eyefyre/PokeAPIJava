@@ -26,7 +26,7 @@ public class Stat {
     NamedAPIResource move_damage_class;
     ArrayList<Name> names;
 
-    public int getId() {
+    public int getID() {
         return id;
     }
 
@@ -34,19 +34,19 @@ public class Stat {
         return name;
     }
 
-    public int getGame_index() {
+    public int getGameIndex() {
         return game_index;
     }
 
-    public boolean isIs_battle_only() {
+    public boolean isBattleOnly() {
         return is_battle_only;
     }
 
-    public MoveStatAffectSet getAffecting_moves() {
+    public MoveStatAffectSet getAffectingMoves() {
         return affecting_moves;
     }
 
-    public NatureStatAffectSet getAffecting_natures() {
+    public NatureStatAffectSet getAffectingNatures() {
         return affecting_natures;
     }
 
@@ -54,7 +54,7 @@ public class Stat {
         return characteristics;
     }
 
-    public NamedAPIResource getMove_damage_class() {
+    public NamedAPIResource getMoveDamageClass() {
         return move_damage_class;
     }
 

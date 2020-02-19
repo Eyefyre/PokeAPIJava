@@ -27,7 +27,7 @@ public class Berry {
     NamedAPIResource item;
     NamedAPIResource natural_gift_type;
 
-    public int getId() {
+    public int getID() {
         return id;
     }
 
@@ -35,15 +35,15 @@ public class Berry {
         return name;
     }
 
-    public int getGrowth_time() {
+    public int getGrowthTime() {
         return growth_time;
     }
 
-    public int getMax_harvest() {
+    public int getMaxHarvest() {
         return max_harvest;
     }
 
-    public int getNatural_gift_power() {
+    public int getNaturalGiftPower() {
         return natural_gift_power;
     }
 
@@ -55,7 +55,7 @@ public class Berry {
         return smoothness;
     }
 
-    public int getSoil_dryness() {
+    public int getSoilDryness() {
         return soil_dryness;
     }
 
@@ -71,7 +71,7 @@ public class Berry {
         return item;
     }
 
-    public NamedAPIResource getNatural_gift_type() {
+    public NamedAPIResource getNaturalGiftType() {
         return natural_gift_type;
     }
 

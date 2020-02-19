@@ -17,7 +17,7 @@ public class FlavorText {
     NamedAPIResource language;
     NamedAPIResource version;
 
-    public String getFlavor_text() {
+    public String getFlavorText() {
         return flavor_text;
     }
 

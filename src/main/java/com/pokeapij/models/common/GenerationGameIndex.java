@@ -16,7 +16,7 @@ public class GenerationGameIndex {
     int game_index;
     NamedAPIResource generation;
 
-    public int getGame_index() {
+    public int getGameIndex() {
         return game_index;
     }
 

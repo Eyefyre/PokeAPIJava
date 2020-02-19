@@ -16,7 +16,7 @@ public class VersionGameIndex {
     int game_index;
     NamedAPIResource version;
 
-    public int getGame_index() {
+    public int getGameIndex() {
         return game_index;
     }
 

@@ -29,7 +29,7 @@ public class PokemonForm {
     ArrayList<Name> names;
     ArrayList<Name> form_names;
 
-    public int getId() {
+    public int getID() {
         return id;
     }
 
@@ -41,23 +41,23 @@ public class PokemonForm {
         return order;
     }
 
-    public int getForm_order() {
+    public int getFormOrder() {
         return form_order;
     }
 
-    public boolean isIs_default() {
+    public boolean isDefault() {
         return is_default;
     }
 
-    public boolean isIs_battle_only() {
+    public boolean isBattleOnly() {
         return is_battle_only;
     }
 
-    public boolean isIs_mega() {
+    public boolean isMega() {
         return is_mega;
     }
 
-    public String getForm_name() {
+    public String getFormName() {
         return form_name;
     }
 
@@ -69,7 +69,7 @@ public class PokemonForm {
         return sprites;
     }
 
-    public NamedAPIResource getVersion_group() {
+    public NamedAPIResource getVersionGroup() {
         return version_group;
     }
 
@@ -77,7 +77,7 @@ public class PokemonForm {
         return names;
     }
 
-    public ArrayList<Name> getForm_names() {
+    public ArrayList<Name> getFormNames() {
         return form_names;
     }
 
@@ -93,19 +93,19 @@ public class PokemonForm {
         String back_default;
         String back_shiny;
 
-        public String getFront_default() {
+        public String getFrontDefault() {
             return front_default;
         }
 
-        public String getFront_shiny() {
+        public String getFrontShiny() {
             return front_shiny;
         }
 
-        public String getBack_default() {
+        public String getBackDefault() {
             return back_default;
         }
 
-        public String getBack_shiny() {
+        public String getBackShiny() {
             return back_shiny;
         }
 

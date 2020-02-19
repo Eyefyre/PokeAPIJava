@@ -25,7 +25,7 @@ public class Nature {
     ArrayList<MoveBattleStylePreference> move_battle_style_preferences;
     ArrayList<Name> names;
 
-    public int getId() {
+    public int getID() {
         return id;
     }
 
@@ -33,27 +33,27 @@ public class Nature {
         return name;
     }
 
-    public NamedAPIResource getDecreased_stat() {
+    public NamedAPIResource getDecreasedStat() {
         return decreased_stat;
     }
 
-    public NamedAPIResource getIncreased_stat() {
+    public NamedAPIResource getIncreasedStat() {
         return increased_stat;
     }
 
-    public NamedAPIResource getHates_flavor() {
+    public NamedAPIResource getHatesFlavor() {
         return hates_flavor;
     }
 
-    public NamedAPIResource getLikes_flavor() {
+    public NamedAPIResource getLikesFlavor() {
         return likes_flavor;
     }
 
-    public ArrayList<NatureStatChange> getPokeathlon_stat_changes() {
+    public ArrayList<NatureStatChange> getPokeathlonStatChanges() {
         return pokeathlon_stat_changes;
     }
 
-    public ArrayList<MoveBattleStylePreference> getMove_battle_style_preferences() {
+    public ArrayList<MoveBattleStylePreference> getMoveBattleStylePreferences() {
         return move_battle_style_preferences;
     }
 
@@ -71,11 +71,11 @@ public class Nature {
         int max_change;
         NamedAPIResource pokeathlon_stat;
 
-        public int getMax_change() {
+        public int getMaxChange() {
             return max_change;
         }
 
-        public NamedAPIResource getPokeathlon_stat() {
+        public NamedAPIResource getPokeathlonStat() {
             return pokeathlon_stat;
         }
 
@@ -92,15 +92,15 @@ public class Nature {
         int high_hp_preference;
         NamedAPIResource move_battle_style;
 
-        public int getLow_hp_preference() {
+        public int getLowHPPreference() {
             return low_hp_preference;
         }
 
-        public int getHigh_hp_preference() {
+        public int getHighHPPreference() {
             return high_hp_preference;
         }
 
-        public NamedAPIResource getMove_battle_style() {
+        public NamedAPIResource getMoveBattleStyle() {
             return move_battle_style;
         }
 

@@ -20,7 +20,7 @@ public class PokemonHabitat {
     ArrayList<Name> names;
     ArrayList<NamedAPIResource> pokemon_species;
 
-    public int getId() {
+    public int getID() {
         return id;
     }
 
@@ -32,7 +32,7 @@ public class PokemonHabitat {
         return names;
     }
 
-    public ArrayList<NamedAPIResource> getPokemon_species() {
+    public ArrayList<NamedAPIResource> getPokemonSpecies() {
         return pokemon_species;
     }
 

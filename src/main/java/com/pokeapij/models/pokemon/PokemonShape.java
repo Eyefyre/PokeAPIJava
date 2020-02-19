@@ -21,7 +21,7 @@ public class PokemonShape {
     ArrayList<Name> names;
     ArrayList<PokemonSpecies> pokemon_species;
 
-    public int getId() {
+    public int getID() {
         return id;
     }
 
@@ -29,7 +29,7 @@ public class PokemonShape {
         return name;
     }
 
-    public ArrayList<AwesomeName> getAwesome_names() {
+    public ArrayList<AwesomeName> getAwesomeNames() {
         return awesome_names;
     }
 
@@ -37,7 +37,7 @@ public class PokemonShape {
         return names;
     }
 
-    public ArrayList<PokemonSpecies> getPokemon_species() {
+    public ArrayList<PokemonSpecies> getPokemonSpecies() {
         return pokemon_species;
     }
 
@@ -51,7 +51,7 @@ public class PokemonShape {
         String awesome_name;
         NamedAPIResource language;
 
-        public String getAwesome_name() {
+        public String getAwesomeName() {
             return awesome_name;
         }
 

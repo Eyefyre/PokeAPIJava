@@ -25,7 +25,7 @@ public class Generation {
     ArrayList<NamedAPIResource> types;
     ArrayList<NamedAPIResource> version_groups;
 
-    public int getId() {
+    public int getID() {
         return id;
     }
 
@@ -41,7 +41,7 @@ public class Generation {
         return names;
     }
 
-    public NamedAPIResource getMain_region() {
+    public NamedAPIResource getMainRegion() {
         return main_region;
     }
 
@@ -49,7 +49,7 @@ public class Generation {
         return moves;
     }
 
-    public ArrayList<NamedAPIResource> getPokemon_species() {
+    public ArrayList<NamedAPIResource> getPokemonSpecies() {
         return pokemon_species;
     }
 
@@ -57,7 +57,7 @@ public class Generation {
         return types;
     }
 
-    public ArrayList<NamedAPIResource> getVersion_groups() {
+    public ArrayList<NamedAPIResource> getVersionGroups() {
         return version_groups;
     }
 

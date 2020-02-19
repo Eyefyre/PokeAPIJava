@@ -21,7 +21,7 @@ public class ItemCategory {
     ArrayList<Name> names;
     NamedAPIResource pocket;
 
-    public int getId() {
+    public int getID() {
         return id;
     }
 

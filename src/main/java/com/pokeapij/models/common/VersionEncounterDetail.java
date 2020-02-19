@@ -22,11 +22,11 @@ public class VersionEncounterDetail {
         return version;
     }
 
-    public int getMax_chance() {
+    public int getMaxChance() {
         return max_chance;
     }
 
-    public ArrayList<Encounter> getEncounter_details() {
+    public ArrayList<Encounter> getEncounterDetails() {
         return encounter_details;
     }
 

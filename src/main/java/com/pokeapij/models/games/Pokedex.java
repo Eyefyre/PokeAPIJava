@@ -25,7 +25,7 @@ public class Pokedex {
     NamedAPIResource region;
     ArrayList<NamedAPIResource> version_groups;
 
-    public int getId() {
+    public int getID() {
         return id;
     }
 
@@ -33,7 +33,7 @@ public class Pokedex {
         return name;
     }
 
-    public boolean isIs_main_series() {
+    public boolean isMainSeries() {
         return is_main_series;
     }
 
@@ -45,7 +45,7 @@ public class Pokedex {
         return names;
     }
 
-    public ArrayList<PokemonEntry> getPokemon_entries() {
+    public ArrayList<PokemonEntry> getPokemonEntries() {
         return pokemon_entries;
     }
 
@@ -53,7 +53,7 @@ public class Pokedex {
         return region;
     }
 
-    public ArrayList<NamedAPIResource> getVersion_groups() {
+    public ArrayList<NamedAPIResource> getVersionGroups() {
         return version_groups;
     }
 
@@ -67,17 +67,12 @@ public class Pokedex {
         int entry_number;
         NamedAPIResource pokemon_species;
 
-        public int getEntry_number() {
+        public int getEntryNumber() {
             return entry_number;
         }
 
-        public NamedAPIResource getPokemon_species() {
+        public NamedAPIResource getPokemonSpecies() {
             return pokemon_species;
-        }
-
-        public PokemonEntry(int entry_number, NamedAPIResource pokemon_species) {
-            this.entry_number = entry_number;
-            this.pokemon_species = pokemon_species;
         }
 
         @Override

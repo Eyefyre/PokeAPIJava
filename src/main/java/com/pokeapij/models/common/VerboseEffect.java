@@ -21,7 +21,7 @@ public class VerboseEffect {
         return effect;
     }
 
-    public String getShort_effect() {
+    public String getShortEffect() {
         return short_effect;
     }
 

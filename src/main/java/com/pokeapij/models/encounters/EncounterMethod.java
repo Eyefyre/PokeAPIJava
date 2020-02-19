@@ -19,7 +19,7 @@ public class EncounterMethod {
     int order;
     ArrayList<Name> names;
 
-    public int getId() {
+    public int getID() {
         return id;
     }
 

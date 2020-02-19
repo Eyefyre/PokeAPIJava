@@ -17,11 +17,11 @@ public class AbilityEffectChange {
     ArrayList<Effect> effect_entries;
     NamedAPIResource version_group;
 
-    public ArrayList<Effect> getEffect_entries() {
+    public ArrayList<Effect> getEffectEntries() {
         return effect_entries;
     }
 
-    public NamedAPIResource getVersion_group() {
+    public NamedAPIResource getVersionGroup() {
         return version_group;
     }
 

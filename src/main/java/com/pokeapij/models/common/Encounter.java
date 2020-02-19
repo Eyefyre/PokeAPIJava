@@ -20,15 +20,15 @@ public class Encounter {
     int chance;
     NamedAPIResource method;
 
-    public int getMin_level() {
+    public int getMinLevel() {
         return min_level;
     }
 
-    public int getMax_level() {
+    public int getMaxLevel() {
         return max_level;
     }
 
-    public ArrayList<NamedAPIResource> getCondition_values() {
+    public ArrayList<NamedAPIResource> getConditionValues() {
         return condition_values;
     }
 

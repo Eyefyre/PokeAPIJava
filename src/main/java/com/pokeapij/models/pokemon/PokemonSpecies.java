@@ -44,7 +44,7 @@ public class PokemonSpecies {
     ArrayList<Genus> genera;
     ArrayList<PokemonSpeciesVariety> varieties;
 
-    public int getId() {
+    public int getID() {
         return id;
     }
 
@@ -56,43 +56,43 @@ public class PokemonSpecies {
         return order;
     }
 
-    public int getGender_rate() {
+    public int getGenderRate() {
         return gender_rate;
     }
 
-    public int getCapture_rate() {
+    public int getCaptureRate() {
         return capture_rate;
     }
 
-    public int getBase_happiness() {
+    public int getBaseHappiness() {
         return base_happiness;
     }
 
-    public boolean isIs_baby() {
+    public boolean isBaby() {
         return is_baby;
     }
 
-    public int getHatch_counter() {
+    public int getHatchCounter() {
         return hatch_counter;
     }
 
-    public boolean isHas_gender_differences() {
+    public boolean hasGenderDifferences() {
         return has_gender_differences;
     }
 
-    public boolean isForms_switchable() {
+    public boolean isFormsSwitchable() {
         return forms_switchable;
     }
 
-    public NamedAPIResource getGrowth_rate() {
+    public NamedAPIResource getGrowthRate() {
         return growth_rate;
     }
 
-    public ArrayList<PokemonSpeciesDexEntry> getPokedex_numbers() {
+    public ArrayList<PokemonSpeciesDexEntry> getPokedexNumbers() {
         return pokedex_numbers;
     }
 
-    public ArrayList<NamedAPIResource> getEgg_groups() {
+    public ArrayList<NamedAPIResource> getEggGroups() {
         return egg_groups;
     }
 
@@ -104,11 +104,11 @@ public class PokemonSpecies {
         return shape;
     }
 
-    public NamedAPIResource getEvolves_from_species() {
+    public NamedAPIResource getEvolvesFromSpecies() {
         return evolves_from_species;
     }
 
-    public APIResource getEvolution_chain() {
+    public APIResource getEvolutionChain() {
         return evolution_chain;
     }
 
@@ -124,15 +124,15 @@ public class PokemonSpecies {
         return names;
     }
 
-    public ArrayList<PalParkEncounterArea> getPal_park_encounters() {
+    public ArrayList<PalParkEncounterArea> getPalParkEncounters() {
         return pal_park_encounters;
     }
 
-    public ArrayList<FlavorText> getFlavor_text_entries() {
+    public ArrayList<FlavorText> getFlavorTextEntries() {
         return flavor_text_entries;
     }
 
-    public ArrayList<Description> getForm_descriptions() {
+    public ArrayList<Description> getFormDescriptions() {
         return form_descriptions;
     }
 
@@ -154,7 +154,7 @@ public class PokemonSpecies {
         int entry_number;
         NamedAPIResource language;
 
-        public int getEntry_number() {
+        public int getEntryNumber() {
             return entry_number;
         }
 
@@ -175,7 +175,7 @@ public class PokemonSpecies {
         int rate;
         NamedAPIResource area;
 
-        public int getBase_score() {
+        public int getBaseScore() {
             return base_score;
         }
 
@@ -219,7 +219,7 @@ public class PokemonSpecies {
         boolean is_default;
         NamedAPIResource pokemon;
 
-        public boolean isIs_default() {
+        public boolean isDefault() {
             return is_default;
         }
 

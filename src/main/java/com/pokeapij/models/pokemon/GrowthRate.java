@@ -22,7 +22,7 @@ public class GrowthRate {
     ArrayList<GrowthRateExperienceLevel> levels;
     ArrayList<NamedAPIResource> pokemon_species;
 
-    public int getId() {
+    public int getID() {
         return id;
     }
 
@@ -42,7 +42,7 @@ public class GrowthRate {
         return levels;
     }
 
-    public ArrayList<NamedAPIResource> getPokemon_species() {
+    public ArrayList<NamedAPIResource> getPokemonSpecies() {
         return pokemon_species;
     }
 

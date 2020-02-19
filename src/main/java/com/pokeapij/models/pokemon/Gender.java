@@ -19,7 +19,7 @@ public class Gender {
     ArrayList<PokemonSpeciesGender> pokemon_species_details;
     ArrayList<NamedAPIResource> required_for_evolution;
 
-    public int getId() {
+    public int getID() {
         return id;
     }
 
@@ -27,11 +27,11 @@ public class Gender {
         return name;
     }
 
-    public ArrayList<PokemonSpeciesGender> getPokemon_species_details() {
+    public ArrayList<PokemonSpeciesGender> getPokemonSpeciesDetails() {
         return pokemon_species_details;
     }
 
-    public ArrayList<NamedAPIResource> getRequired_for_evolution() {
+    public ArrayList<NamedAPIResource> getRequiredForEvolution() {
         return required_for_evolution;
     }
 
@@ -49,7 +49,7 @@ public class Gender {
             return rate;
         }
 
-        public NamedAPIResource getPokemon_species() {
+        public NamedAPIResource getPokemonSpecies() {
             return pokemon_species;
         }
 

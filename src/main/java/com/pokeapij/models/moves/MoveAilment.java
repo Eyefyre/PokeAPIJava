@@ -20,7 +20,7 @@ public class MoveAilment {
     ArrayList<NamedAPIResource> moves;
     ArrayList<Name> names;
 
-    public int getId() {
+    public int getID() {
         return id;
     }
 

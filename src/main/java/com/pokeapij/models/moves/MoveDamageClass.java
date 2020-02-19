@@ -22,7 +22,7 @@ public class MoveDamageClass {
     ArrayList<NamedAPIResource> moves;
     ArrayList<Name> names;
 
-    public int getId() {
+    public int getID() {
         return id;
     }
 

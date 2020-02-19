@@ -33,7 +33,7 @@ public class Pokemon {
     ArrayList<PokemonStat> stats;
     ArrayList<PokemonType> types;
 
-    public int getId() {
+    public int getID() {
         return id;
     }
 
@@ -41,7 +41,7 @@ public class Pokemon {
         return name;
     }
 
-    public int getBase_experience() {
+    public int getBaseExperience() {
         return base_experience;
     }
 
@@ -49,7 +49,7 @@ public class Pokemon {
         return height;
     }
 
-    public boolean isIs_default() {
+    public boolean isDefault() {
         return is_default;
     }
 
@@ -69,15 +69,15 @@ public class Pokemon {
         return forms;
     }
 
-    public ArrayList<VersionGameIndex> getGame_indices() {
+    public ArrayList<VersionGameIndex> getGameIndices() {
         return game_indices;
     }
 
-    public ArrayList<PokemonHeldItem> getHeld_items() {
+    public ArrayList<PokemonHeldItem> getHeldItems() {
         return held_items;
     }
 
-    public String getLocation_area_encounters() {
+    public String getLocationAreaEncounters() {
         return location_area_encounters;
     }
 
@@ -112,7 +112,7 @@ public class Pokemon {
         int slot;
         NamedAPIResource ability;
 
-        public boolean isIs_hidden() {
+        public boolean isHidden() {
             return is_hidden;
         }
 
@@ -140,7 +140,7 @@ public class Pokemon {
             return item;
         }
 
-        public ArrayList<PokemonHeldItemVersion> getVersion_details() {
+        public ArrayList<PokemonHeldItemVersion> getVersionDetails() {
             return version_details;
         }
 
@@ -180,7 +180,7 @@ public class Pokemon {
             return move;
         }
 
-        public ArrayList<PokemonMoveVersion> getVersion_group_details() {
+        public ArrayList<PokemonMoveVersion> getVersionGroupDetails() {
             return version_group_details;
         }
 
@@ -197,15 +197,15 @@ public class Pokemon {
         NamedAPIResource version_group;
         int level_learned_at;
 
-        public NamedAPIResource getMove_learn_method() {
+        public NamedAPIResource getMoveLearnMethod() {
             return move_learn_method;
         }
 
-        public NamedAPIResource getVersion_group() {
+        public NamedAPIResource getVersionGroup() {
             return version_group;
         }
 
-        public int getLevel_learned_at() {
+        public int getLevelLearnedAt() {
             return level_learned_at;
         }
 
@@ -227,35 +227,35 @@ public class Pokemon {
         String back_female;
         String back_shiny_female;
 
-        public String getFront_default() {
+        public String getFrontDefault() {
             return front_default;
         }
 
-        public String getFront_shiny() {
+        public String getFrontShiny() {
             return front_shiny;
         }
 
-        public String getFront_female() {
+        public String getFrontFemale() {
             return front_female;
         }
 
-        public String getFront_shiny_female() {
+        public String getFrontShinyFemale() {
             return front_shiny_female;
         }
 
-        public String getBack_default() {
+        public String getBackDefault() {
             return back_default;
         }
 
-        public String getBack_shiny() {
+        public String getBackShiny() {
             return back_shiny;
         }
 
-        public String getBack_female() {
+        public String getBackFemale() {
             return back_female;
         }
 
-        public String getBack_shiny_female() {
+        public String getBackShinyFemale() {
             return back_shiny_female;
         }
 
@@ -280,7 +280,7 @@ public class Pokemon {
             return effort;
         }
 
-        public int getBase_stat() {
+        public int getBaseStat() {
             return base_stat;
         }
 

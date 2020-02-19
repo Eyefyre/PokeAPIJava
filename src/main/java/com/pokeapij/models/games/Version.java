@@ -20,7 +20,7 @@ public class Version {
     ArrayList<Name> names;
     NamedAPIResource version_group;
 
-    public int getId() {
+    public int getID() {
         return id;
     }
 
@@ -32,7 +32,7 @@ public class Version {
         return names;
     }
 
-    public NamedAPIResource getVersion_group() {
+    public NamedAPIResource getVersionGroup() {
         return version_group;
     }
 

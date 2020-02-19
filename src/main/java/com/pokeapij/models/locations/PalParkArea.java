@@ -20,7 +20,7 @@ public class PalParkArea {
     ArrayList<Name> names;
     ArrayList<PalParkEncounterSpecies> pokemon_encounters;
 
-    public int getId() {
+    public int getID() {
         return id;
     }
 
@@ -32,7 +32,7 @@ public class PalParkArea {
         return names;
     }
 
-    public ArrayList<PalParkEncounterSpecies> getPokemon_encounters() {
+    public ArrayList<PalParkEncounterSpecies> getPokemonEncounters() {
         return pokemon_encounters;
     }
 
@@ -47,7 +47,7 @@ public class PalParkArea {
         int rate;
         NamedAPIResource pokemon_species;
 
-        public int getBase_score() {
+        public int getBaseScore() {
             return base_score;
         }
 
@@ -55,7 +55,7 @@ public class PalParkArea {
             return rate;
         }
 
-        public NamedAPIResource getPokemon_species() {
+        public NamedAPIResource getPokemonSpecies() {
             return pokemon_species;
         }
 

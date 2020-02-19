@@ -20,7 +20,7 @@ public class ItemPocket {
     ArrayList<NamedAPIResource> categories;
     ArrayList<Name> names;
 
-    public int getId() {
+    public int getID() {
         return id;
     }
 

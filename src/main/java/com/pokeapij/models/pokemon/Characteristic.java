@@ -17,15 +17,15 @@ public class Characteristic {
     int gene_modulo;
     ArrayList<Integer> possible_values;
 
-    public int getId() {
+    public int getID() {
         return id;
     }
 
-    public int getGene_modulo() {
+    public int getGeneModulo() {
         return gene_modulo;
     }
 
-    public ArrayList<Integer> getPossible_values() {
+    public ArrayList<Integer> getPossibleValues() {
         return possible_values;
     }
 

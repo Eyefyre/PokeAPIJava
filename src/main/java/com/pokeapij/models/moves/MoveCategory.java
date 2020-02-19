@@ -20,7 +20,7 @@ public class MoveCategory {
     ArrayList<NamedAPIResource> moves;
     ArrayList<Description> descriptions;
 
-    public int getId() {
+    public int getID() {
         return id;
     }
 

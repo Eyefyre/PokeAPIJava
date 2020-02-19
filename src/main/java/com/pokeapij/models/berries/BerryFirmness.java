@@ -20,7 +20,7 @@ public class BerryFirmness {
     ArrayList<NamedAPIResource> berries;
     ArrayList<Name> names;
 
-    public int getId() {
+    public int getID() {
         return id;
     }
 

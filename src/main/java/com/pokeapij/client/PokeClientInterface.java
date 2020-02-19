@@ -24,6 +24,7 @@ import com.pokeapij.models.resources.*;
  */
 public interface PokeClientInterface {
 
+
     //BERRY LISTS
     NamedAPIResourceList getBerryList(int offset, int limit);
 
@@ -143,7 +144,7 @@ public interface PokeClientInterface {
     BerryFlavor getBerryFlavor(int id);
 
     BerryFlavor getBerryFlavor(String name);
-    
+
     //SINGLE CONTEST
     ContestType getContestType(int id);
 
@@ -152,7 +153,7 @@ public interface PokeClientInterface {
     ContestEffect getContestEffect(int id);
 
     SuperContestEffect getSuperContestEffect(int id);
-    
+
     //SINGLE ENCOUNTER
     EncounterMethod getEncounterMethod(int id);
 
@@ -165,14 +166,14 @@ public interface PokeClientInterface {
     EncounterConditionValue getEncounterConditionValue(int id);
 
     EncounterConditionValue getEncounterConditionValue(String name);
-    
+
     //SINGLE EVOLUTION
     EvolutionChain getEvolutionChain(int id);
 
     EvolutionTrigger getEvolutionTrigger(int id);
 
     EvolutionTrigger getEvolutionTrigger(String name);
-    
+
     //SINGLE GAME
     Generation getGeneration(int id);
 
@@ -185,11 +186,11 @@ public interface PokeClientInterface {
     Version getVersion(int id);
 
     Version getVersion(String name);
-    
+
     VersionGroup getVersionGroup(int id);
 
     VersionGroup getVersionGroup(String name);
-    
+
     //SINGLE ITEM
     Item getItem(int id);
 
@@ -202,15 +203,15 @@ public interface PokeClientInterface {
     ItemCategory getItemCategory(int id);
 
     ItemCategory getItemCategory(String name);
-    
+
     ItemFlingEffect getItemFlingEffect(int id);
 
     ItemFlingEffect getItemFlingEffect(String name);
-    
+
     ItemPocket getItemPocket(int id);
 
     ItemPocket getItemPocket(String name);
-    
+
     //SINGLE LOCATION
     Location getLocation(int id);
 
@@ -219,109 +220,109 @@ public interface PokeClientInterface {
     LocationArea getLocationArea(int id);
 
     LocationArea getLocationArea(String name);
-    
+
     PalParkArea getPalParkArea(int id);
 
     PalParkArea getPalParkArea(String name);
-    
+
     Region getRegion(int id);
 
     Region getRegion(String name);
-    
+
     //SINGLE MACHINE
     Machine getMachine(int id);
-    
+
     //SINGLE MOVE
     Move getMove(int id);
 
     Move getMove(String name);
-    
+
     MoveAilment getMoveAilment(int id);
 
     MoveAilment getMoveAilment(String name);
-    
+
     MoveBattleStyle getMoveBattleStyle(int id);
 
     MoveBattleStyle getMoveBattleStyle(String name);
-    
+
     MoveCategory getMoveCategory(int id);
 
     MoveCategory getMoveCategory(String name);
-    
+
     MoveDamageClass getMoveDamageClass(int id);
 
     MoveDamageClass getMoveDamageClass(String name);
-    
+
     MoveLearnMethod getMoveLearnMethod(int id);
 
     MoveLearnMethod getMoveLearnMethod(String name);
-    
+
     MoveTarget getMoveTarget(int id);
 
     MoveTarget getMoveTarget(String name);
-    
+
     //SINGLE POKEMON
     Ability getAbility(int id);
 
     Ability getAbility(String name);
-    
+
     Characteristic getCharacteristic(int id);
-    
+
     EggGroup getEggGroup(int id);
 
     EggGroup getEggGroup(String name);
-    
+
     Gender getGender(int id);
 
     Gender getGender(String name);
-    
+
     GrowthRate getGrowthRate(int id);
 
     GrowthRate getGrowthRate(String name);
-    
+
     Nature getNature(int id);
 
     Nature getNature(String name);
-    
+
     PokeathlonStat getPokeathlonStat(int id);
 
     PokeathlonStat getPokeathlonStat(String name);
-    
+
     Pokemon getPokemon(int id);
 
     Pokemon getPokemon(String name);
-    
+
     PokemonColor getPokemonColor(int id);
 
     PokemonColor getPokemonColor(String name);
-    
+
     PokemonForm getPokemonForm(int id);
 
     PokemonForm getPokemonForm(String name);
-    
+
     PokemonHabitat getPokemonHabitat(int id);
 
     PokemonHabitat getPokemonHabitat(String name);
-    
+
     PokemonShape getPokemonShape(int id);
 
     PokemonShape getPokemonShape(String name);
-    
+
     PokemonSpecies getPokemonSpecies(int id);
 
     PokemonSpecies getPokemonSpecies(String name);
-    
+
     Stat getStat(int id);
 
     Stat getStat(String name);
-    
+
     Type getType(int id);
 
     Type getType(String name);
-    
+
     //SINGLE UTILITY
     Language getLanguage(int id);
 
     Language getLanguage(String name);
-    
+
 }

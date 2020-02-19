@@ -20,7 +20,7 @@ public class EvolutionTrigger {
     ArrayList<Name> names;
     ArrayList<NamedAPIResource> pokemon_species;
 
-    public int getId() {
+    public int getID() {
         return id;
     }
 
@@ -32,7 +32,7 @@ public class EvolutionTrigger {
         return names;
     }
 
-    public ArrayList<NamedAPIResource> getPokemon_species() {
+    public ArrayList<NamedAPIResource> getPokemonSpecies() {
         return pokemon_species;
     }
 

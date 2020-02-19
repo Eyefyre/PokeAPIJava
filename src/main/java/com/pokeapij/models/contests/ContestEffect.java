@@ -21,7 +21,7 @@ public class ContestEffect {
     ArrayList<Effect> effect_entries;
     ArrayList<FlavorText> flavor_text_entries;
 
-    public int getId() {
+    public int getID() {
         return id;
     }
 
@@ -33,11 +33,11 @@ public class ContestEffect {
         return jam;
     }
 
-    public ArrayList<Effect> getEffect_entries() {
+    public ArrayList<Effect> getEffectEntries() {
         return effect_entries;
     }
 
-    public ArrayList<FlavorText> getFlavor_text_entries() {
+    public ArrayList<FlavorText> getFlavorTextEntries() {
         return flavor_text_entries;
     }
 

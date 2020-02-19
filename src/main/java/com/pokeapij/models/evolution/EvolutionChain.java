@@ -22,7 +22,7 @@ public class EvolutionChain {
         return id;
     }
 
-    public NamedAPIResource getBaby_trigger_item() {
+    public NamedAPIResource getBabyTriggerItem() {
         return baby_trigger_item;
     }
 
@@ -42,7 +42,7 @@ public class EvolutionChain {
         ArrayList<EvolutionDetail> evolution_details;
         ArrayList<ChainLink> evolves_to;
 
-        public boolean isIs_baby() {
+        public boolean isBaby() {
             return is_baby;
         }
 
@@ -50,11 +50,11 @@ public class EvolutionChain {
             return species;
         }
 
-        public ArrayList<EvolutionDetail> getEvolution_details() {
+        public ArrayList<EvolutionDetail> getEvolutionDetails() {
             return evolution_details;
         }
 
-        public ArrayList<ChainLink> getEvolves_to() {
+        public ArrayList<ChainLink> getEvolvesTo() {
             return evolves_to;
         }
 
@@ -98,15 +98,15 @@ public class EvolutionChain {
             return gender;
         }
 
-        public NamedAPIResource getHeld_item() {
+        public NamedAPIResource getHeldItem() {
             return held_item;
         }
 
-        public NamedAPIResource getKnown_move() {
+        public NamedAPIResource getKnownMove() {
             return known_move;
         }
 
-        public NamedAPIResource getKnown_move_type() {
+        public NamedAPIResource getKnownMoveType() {
             return known_move_type;
         }
 
@@ -114,47 +114,47 @@ public class EvolutionChain {
             return location;
         }
 
-        public int getMin_level() {
+        public int getMinLevel() {
             return min_level;
         }
 
-        public int getMin_happiness() {
+        public int getMinHappiness() {
             return min_happiness;
         }
 
-        public int getMin_beauty() {
+        public int getMinBeauty() {
             return min_beauty;
         }
 
-        public int getMin_affection() {
+        public int getMinAffection() {
             return min_affection;
         }
 
-        public boolean isNeeds_overworld_rain() {
+        public boolean needsOverworldRain() {
             return needs_overworld_rain;
         }
 
-        public NamedAPIResource getParty_species() {
+        public NamedAPIResource getPartySpecies() {
             return party_species;
         }
 
-        public NamedAPIResource getParty_type() {
+        public NamedAPIResource getPartyType() {
             return party_type;
         }
 
-        public int getRelative_physical_stats() {
+        public int getRelativePhysicalStats() {
             return relative_physical_stats;
         }
 
-        public String getTime_of_day() {
+        public String getTimeOfDay() {
             return time_of_day;
         }
 
-        public NamedAPIResource getTrade_species() {
+        public NamedAPIResource getTradeSpecies() {
             return trade_species;
         }
 
-        public boolean isTurn_upside_down() {
+        public boolean isTurnUpsideDown() {
             return turn_upside_down;
         }
 

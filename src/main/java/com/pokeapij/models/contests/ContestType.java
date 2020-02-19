@@ -19,7 +19,7 @@ public class ContestType {
     NamedAPIResource berry_flavor;
     ArrayList<ContestName> names;
 
-    public int getId() {
+    public int getID() {
         return id;
     }
 
@@ -27,7 +27,7 @@ public class ContestType {
         return name;
     }
 
-    public NamedAPIResource getBerry_flavor() {
+    public NamedAPIResource getBerryFlavor() {
         return berry_flavor;
     }
 

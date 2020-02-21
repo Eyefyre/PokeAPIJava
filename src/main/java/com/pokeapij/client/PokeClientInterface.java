@@ -24,6 +24,8 @@ import com.pokeapij.models.resources.*;
  */
 public interface PokeClientInterface {
 
+    void clearCache();
+
     void changeCacheTimeAmount(long seconds);
 
     long getCacheTime();

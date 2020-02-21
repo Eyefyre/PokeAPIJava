@@ -26,267 +26,277 @@ public class PokeClient implements PokeClientInterface {
 
     private final PokeService pokeService = new PokeService();
 
-    private Object getObject(String path, int offset, int limit, String objectName) {
-        String fullpath = path + "/?limit=" + limit + "&" + "offset=" + offset;
-        return this.useService(fullpath, objectName);
+    @Override
+    public void changeCacheTimeAmount(long seconds) {
+        this.pokeService.changeCacheTime(seconds);
     }
 
-    private Object useService(String path, String objectName) {
-        if (pokeService.getCache().contains(path)) {
-            return pokeService.getCache().get(path);
+    @Override
+    public long getCacheTime() {
+        return this.pokeService.getCacheTime();
+    }
+
+    private Object getObject(String path, int offset, int limit, String objectName) {
+        String fullpath = path + "?limit=" + limit + "&" + "offset=" + offset;
+        return this.useService(fullpath, fullpath, objectName);
+    }
+
+    private Object useService(String cacheID, String path, String objectName) {
+        if (pokeService.getCache().contains(cacheID)) {
+            return pokeService.getCache().get(cacheID);
         }
-        return pokeService.getResource(path, objectName);
+        return pokeService.getResource(cacheID, path, objectName);
     }
 
     private Object getObject(String path, String name, String objectName) {
         String fullpath = path + "/" + name;
-        return this.useService(fullpath, objectName);
+        return this.useService(path, fullpath, objectName);
 
     }
 
     private Object getObject(String path, int id, String objectName) {
         String fullpath = path + "/" + id;
-        return this.useService(fullpath, objectName);
+        return this.useService(path, fullpath, objectName);
     }
 
     @Override
     public NamedAPIResourceList getBerryList(int offset, int limit) {
-        return (NamedAPIResourceList) this.getObject("berry", offset, limit, "NamedAPIResourceList");
+        return (NamedAPIResourceList) this.getObject("berry/", offset, limit, "NamedAPIResourceList");
     }
 
     @Override
     public NamedAPIResourceList getBerryFirmnessList(int offset, int limit) {
-        return (NamedAPIResourceList) this.getObject("berry-firmness", offset, limit, "NamedAPIResourceList");
+        return (NamedAPIResourceList) this.getObject("berry-firmness/", offset, limit, "NamedAPIResourceList");
     }
 
     @Override
     public NamedAPIResourceList getBerryFlavorList(int offset, int limit) {
-        return (NamedAPIResourceList) this.getObject("berry-flavor", offset, limit, "NamedAPIResourceList");
+        return (NamedAPIResourceList) this.getObject("berry-flavor/", offset, limit, "NamedAPIResourceList");
     }
 
     @Override
     public NamedAPIResourceList getContestTypeList(int offset, int limit) {
-        return (NamedAPIResourceList) this.getObject("contest-type", offset, limit, "NamedAPIResourceList");
+        return (NamedAPIResourceList) this.getObject("contest-type/", offset, limit, "NamedAPIResourceList");
     }
 
     @Override
     public APIResourceList getContestEffectList(int offset, int limit) {
-        return (APIResourceList) this.getObject("contest-effect", offset, limit, "APIResourceList");
+        return (APIResourceList) this.getObject("contest-effect/", offset, limit, "APIResourceList");
     }
 
     @Override
     public APIResourceList getSuperContestEffectList(int offset, int limit) {
-        return (APIResourceList) this.getObject("super-contest-effect", offset, limit, "APIResourceList");
+        return (APIResourceList) this.getObject("super-contest-effect/", offset, limit, "APIResourceList");
     }
 
     @Override
     public NamedAPIResourceList getEncounterMethodList(int offset, int limit) {
-        return (NamedAPIResourceList) this.getObject("encounter-method", offset, limit, "NamedAPIResourceList");
+        return (NamedAPIResourceList) this.getObject("encounter-method/", offset, limit, "NamedAPIResourceList");
     }
 
     @Override
     public NamedAPIResourceList getEncounterConditionList(int offset, int limit) {
-        return (NamedAPIResourceList) this.getObject("encounter-condition", offset, limit, "NamedAPIResourceList");
+        return (NamedAPIResourceList) this.getObject("encounter-condition/", offset, limit, "NamedAPIResourceList");
     }
 
     @Override
     public NamedAPIResourceList getEncounterConditionValueList(int offset, int limit) {
-        return (NamedAPIResourceList) this.getObject("encounter-condition-value", offset, limit, "NamedAPIResourceList");
+        return (NamedAPIResourceList) this.getObject("encounter-condition-value/", offset, limit, "NamedAPIResourceList");
     }
 
     @Override
     public APIResourceList getEvolutionChainList(int offset, int limit) {
-        return (APIResourceList) this.getObject("evolution-chain", offset, limit, "APIResourceList");
+        return (APIResourceList) this.getObject("evolution-chain/", offset, limit, "APIResourceList");
     }
 
     @Override
     public NamedAPIResourceList getEvolutionTriggerList(int offset, int limit) {
-        return (NamedAPIResourceList) this.getObject("evolution-trigger", offset, limit, "NamedAPIResourceList");
+        return (NamedAPIResourceList) this.getObject("evolution-trigger/", offset, limit, "NamedAPIResourceList");
     }
 
     @Override
     public NamedAPIResourceList getGenerationList(int offset, int limit) {
-        return (NamedAPIResourceList) this.getObject("generation", offset, limit, "NamedAPIResourceList");
+        return (NamedAPIResourceList) this.getObject("generation/", offset, limit, "NamedAPIResourceList");
     }
 
     @Override
     public NamedAPIResourceList getPokedexList(int offset, int limit) {
-        return (NamedAPIResourceList) this.getObject("pokedex", offset, limit, "NamedAPIResourceList");
+        return (NamedAPIResourceList) this.getObject("pokedex/", offset, limit, "NamedAPIResourceList");
     }
 
     @Override
     public NamedAPIResourceList getVersionList(int offset, int limit) {
-        return (NamedAPIResourceList) this.getObject("version", offset, limit, "NamedAPIResourceList");
+        return (NamedAPIResourceList) this.getObject("version/", offset, limit, "NamedAPIResourceList");
     }
 
     @Override
     public NamedAPIResourceList getVersionGroupList(int offset, int limit) {
-        return (NamedAPIResourceList) this.getObject("version-group", offset, limit, "NamedAPIResourceList");
+        return (NamedAPIResourceList) this.getObject("version-group/", offset, limit, "NamedAPIResourceList");
     }
 
     @Override
     public NamedAPIResourceList getItemList(int offset, int limit) {
-        return (NamedAPIResourceList) this.getObject("item", offset, limit, "NamedAPIResourceList");
+        return (NamedAPIResourceList) this.getObject("item/", offset, limit, "NamedAPIResourceList");
     }
 
     @Override
     public NamedAPIResourceList getItemAttributeList(int offset, int limit) {
-        return (NamedAPIResourceList) this.getObject("item-attribute", offset, limit, "NamedAPIResourceList");
+        return (NamedAPIResourceList) this.getObject("item-attribute/", offset, limit, "NamedAPIResourceList");
     }
 
     @Override
     public NamedAPIResourceList getItemCategoryList(int offset, int limit) {
-        return (NamedAPIResourceList) this.getObject("item-category", offset, limit, "NamedAPIResourceList");
+        return (NamedAPIResourceList) this.getObject("item-category/", offset, limit, "NamedAPIResourceList");
     }
 
     @Override
     public NamedAPIResourceList getItemFlingEffectList(int offset, int limit) {
-        return (NamedAPIResourceList) this.getObject("item-fling-effect", offset, limit, "NamedAPIResourceList");
+        return (NamedAPIResourceList) this.getObject("item-fling-effect/", offset, limit, "NamedAPIResourceList");
     }
 
     @Override
     public NamedAPIResourceList getItemPocketList(int offset, int limit) {
-        return (NamedAPIResourceList) this.getObject("item-pocket", offset, limit, "NamedAPIResourceList");
+        return (NamedAPIResourceList) this.getObject("item-pocket/", offset, limit, "NamedAPIResourceList");
     }
 
     @Override
     public NamedAPIResourceList getLocationList(int offset, int limit) {
-        return (NamedAPIResourceList) this.getObject("location", offset, limit, "NamedAPIResourceList");
+        return (NamedAPIResourceList) this.getObject("location/", offset, limit, "NamedAPIResourceList");
     }
 
     @Override
     public NamedAPIResourceList getLocationAreaList(int offset, int limit) {
-        return (NamedAPIResourceList) this.getObject("location-area", offset, limit, "NamedAPIResourceList");
+        return (NamedAPIResourceList) this.getObject("location-area/", offset, limit, "NamedAPIResourceList");
     }
 
     @Override
     public NamedAPIResourceList getPalParkAreaList(int offset, int limit) {
-        return (NamedAPIResourceList) this.getObject("pal-park-area", offset, limit, "NamedAPIResourceList");
+        return (NamedAPIResourceList) this.getObject("pal-park-area/", offset, limit, "NamedAPIResourceList");
     }
 
     @Override
     public NamedAPIResourceList getRegionList(int offset, int limit) {
-        return (NamedAPIResourceList) this.getObject("region", offset, limit, "NamedAPIResourceList");
+        return (NamedAPIResourceList) this.getObject("region/", offset, limit, "NamedAPIResourceList");
     }
 
     @Override
     public APIResourceList getMachineList(int offset, int limit) {
-        return (APIResourceList) this.getObject("machine", offset, limit, "APIResourceList");
+        return (APIResourceList) this.getObject("machine/", offset, limit, "APIResourceList");
     }
 
     @Override
     public NamedAPIResourceList getMoveList(int offset, int limit) {
-        return (NamedAPIResourceList) this.getObject("move", offset, limit, "NamedAPIResourceList");
+        return (NamedAPIResourceList) this.getObject("move/", offset, limit, "NamedAPIResourceList");
     }
 
     @Override
     public NamedAPIResourceList getMoveAilmentList(int offset, int limit) {
-        return (NamedAPIResourceList) this.getObject("move-ailment", offset, limit, "NamedAPIResourceList");
+        return (NamedAPIResourceList) this.getObject("move-ailment/", offset, limit, "NamedAPIResourceList");
     }
 
     @Override
     public NamedAPIResourceList getMoveBattleStyleList(int offset, int limit) {
-        return (NamedAPIResourceList) this.getObject("move-battle-style", offset, limit, "NamedAPIResourceList");
+        return (NamedAPIResourceList) this.getObject("move-battle-style/", offset, limit, "NamedAPIResourceList");
     }
 
     @Override
     public NamedAPIResourceList getMoveCategoryList(int offset, int limit) {
-        return (NamedAPIResourceList) this.getObject("move-category", offset, limit, "NamedAPIResourceList");
+        return (NamedAPIResourceList) this.getObject("move-category/", offset, limit, "NamedAPIResourceList");
     }
 
     @Override
     public NamedAPIResourceList getMoveDamageClassList(int offset, int limit) {
-        return (NamedAPIResourceList) this.getObject("move-damage-class", offset, limit, "NamedAPIResourceList");
+        return (NamedAPIResourceList) this.getObject("move-damage-class/", offset, limit, "NamedAPIResourceList");
     }
 
     @Override
     public NamedAPIResourceList getMoveLearnMethodList(int offset, int limit) {
-        return (NamedAPIResourceList) this.getObject("move-learn-method", offset, limit, "NamedAPIResourceList");
+        return (NamedAPIResourceList) this.getObject("move-learn-method/", offset, limit, "NamedAPIResourceList");
     }
 
     @Override
     public NamedAPIResourceList getMoveTargetList(int offset, int limit) {
-        return (NamedAPIResourceList) this.getObject("move-target", offset, limit, "NamedAPIResourceList");
+        return (NamedAPIResourceList) this.getObject("move-target/", offset, limit, "NamedAPIResourceList");
     }
 
     @Override
     public NamedAPIResourceList getAbilityList(int offset, int limit) {
-        return (NamedAPIResourceList) this.getObject("ability", offset, limit, "NamedAPIResourceList");
+        return (NamedAPIResourceList) this.getObject("ability/", offset, limit, "NamedAPIResourceList");
     }
 
     @Override
     public APIResourceList getCharacteristicList(int offset, int limit) {
-        return (APIResourceList) this.getObject("characteristic", offset, limit, "APIResourceList");
+        return (APIResourceList) this.getObject("characteristic/", offset, limit, "APIResourceList");
     }
 
     @Override
     public NamedAPIResourceList getEggGroupList(int offset, int limit) {
-        return (NamedAPIResourceList) this.getObject("egg-group", offset, limit, "NamedAPIResourceList");
+        return (NamedAPIResourceList) this.getObject("egg-group/", offset, limit, "NamedAPIResourceList");
     }
 
     @Override
     public NamedAPIResourceList getGenderList(int offset, int limit) {
-        return (NamedAPIResourceList) this.getObject("gender", offset, limit, "NamedAPIResourceList");
+        return (NamedAPIResourceList) this.getObject("gender/", offset, limit, "NamedAPIResourceList");
     }
 
     @Override
     public NamedAPIResourceList getGrowthRateList(int offset, int limit) {
-        return (NamedAPIResourceList) this.getObject("growth-rate", offset, limit, "NamedAPIResourceList");
+        return (NamedAPIResourceList) this.getObject("growth-rate/", offset, limit, "NamedAPIResourceList");
     }
 
     @Override
     public NamedAPIResourceList getNatureList(int offset, int limit) {
-        return (NamedAPIResourceList) this.getObject("nature", offset, limit, "NamedAPIResourceList");
+        return (NamedAPIResourceList) this.getObject("nature/", offset, limit, "NamedAPIResourceList");
     }
 
     @Override
     public NamedAPIResourceList getPokeathlonStatList(int offset, int limit) {
-        return (NamedAPIResourceList) this.getObject("pokeathlon-stat", offset, limit, "NamedAPIResourceList");
+        return (NamedAPIResourceList) this.getObject("pokeathlon-stat/", offset, limit, "NamedAPIResourceList");
     }
 
     @Override
     public NamedAPIResourceList getPokemonList(int offset, int limit) {
-        return (NamedAPIResourceList) this.getObject("pokemon", offset, limit, "NamedAPIResourceList");
+        return (NamedAPIResourceList) this.getObject("pokemon/", offset, limit, "NamedAPIResourceList");
     }
 
     @Override
     public NamedAPIResourceList getPokemonColorList(int offset, int limit) {
-        return (NamedAPIResourceList) this.getObject("pokemon-color", offset, limit, "NamedAPIResourceList");
+        return (NamedAPIResourceList) this.getObject("pokemon-color/", offset, limit, "NamedAPIResourceList");
     }
 
     @Override
     public NamedAPIResourceList getPokemonFormList(int offset, int limit) {
-        return (NamedAPIResourceList) this.getObject("pokemon-form", offset, limit, "NamedAPIResourceList");
+        return (NamedAPIResourceList) this.getObject("pokemon-form/", offset, limit, "NamedAPIResourceList");
     }
 
     @Override
     public NamedAPIResourceList getPokemonHabitatList(int offset, int limit) {
-        return (NamedAPIResourceList) this.getObject("pokemon-habitat", offset, limit, "NamedAPIResourceList");
+        return (NamedAPIResourceList) this.getObject("pokemon-habitat/", offset, limit, "NamedAPIResourceList");
     }
 
     @Override
     public NamedAPIResourceList getPokemonShapeList(int offset, int limit) {
-        return (NamedAPIResourceList) this.getObject("pokemon-shape", offset, limit, "NamedAPIResourceList");
+        return (NamedAPIResourceList) this.getObject("pokemon-shape/", offset, limit, "NamedAPIResourceList");
     }
 
     @Override
     public NamedAPIResourceList getPokemonSpeciesList(int offset, int limit) {
-        return (NamedAPIResourceList) this.getObject("pokemon-species", offset, limit, "NamedAPIResourceList");
+        return (NamedAPIResourceList) this.getObject("pokemon-species/", offset, limit, "NamedAPIResourceList");
     }
 
     @Override
     public NamedAPIResourceList getStatList(int offset, int limit) {
-        return (NamedAPIResourceList) this.getObject("stat", offset, limit, "NamedAPIResourceList");
+        return (NamedAPIResourceList) this.getObject("stat/", offset, limit, "NamedAPIResourceList");
     }
 
     @Override
     public NamedAPIResourceList getTypeList(int offset, int limit) {
-        return (NamedAPIResourceList) this.getObject("type", offset, limit, "NamedAPIResourceList");
+        return (NamedAPIResourceList) this.getObject("type/", offset, limit, "NamedAPIResourceList");
     }
 
     @Override
     public NamedAPIResourceList getLanguageList(int offset, int limit) {
-        return (NamedAPIResourceList) this.getObject("language", offset, limit, "NamedAPIResourceList");
+        return (NamedAPIResourceList) this.getObject("language/", offset, limit, "NamedAPIResourceList");
     }
 
     @Override

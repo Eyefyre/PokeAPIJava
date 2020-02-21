@@ -28,6 +28,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.MalformedURLException;
+import java.net.ProtocolException;
 import java.net.URL;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -44,11 +45,12 @@ public class PokeService implements PokeServiceInterface {
     private String JSONSTRING = "";
     private final GsonBuilder BUILDER = new GsonBuilder();
     private final Gson gson = BUILDER.create();
+    private long cacheTimeInSeconds = 600;
 
     @Override
-    public Object getResource(String path, String objectName) {
+    public Object getResource(String cacheID, String path, String objectName) {
         Object list = queryAPI(path, objectName);
-        CACHE.add(path, list, 600000);
+        CACHE.add(cacheID, list, cacheTimeInSeconds * 1000);
         return list;
     }
 
@@ -72,7 +74,9 @@ public class PokeService implements PokeServiceInterface {
             }
             JSONSTRING = content.toString();
             conn.disconnect();
-        } catch (MalformedURLException ex) {
+        } catch (MalformedURLException ex) { 
+            Logger.getLogger(PokeService.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ProtocolException ex) {
             Logger.getLogger(PokeService.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
             Logger.getLogger(PokeService.class.getName()).log(Level.SEVERE, null, ex);
@@ -240,7 +244,6 @@ public class PokeService implements PokeServiceInterface {
                 case "Language":
                     resource = gson.fromJson(jsonObject.toString(), Language.class);
                     break;
-
             }
         }
         return resource;
@@ -249,6 +252,16 @@ public class PokeService implements PokeServiceInterface {
     @Override
     public InMemoryCache getCache() {
         return CACHE;
+    }
+
+    @Override
+    public void changeCacheTime(long seconds) {
+        this.cacheTimeInSeconds = seconds;
+    }
+
+    @Override
+    public long getCacheTime() {
+        return this.cacheTimeInSeconds;
     }
 
 }

@@ -24,6 +24,9 @@ import com.pokeapij.models.resources.*;
  */
 public interface PokeClientInterface {
 
+    void changeCacheTimeAmount(long seconds);
+
+    long getCacheTime();
 
     //BERRY LISTS
     NamedAPIResourceList getBerryList(int offset, int limit);

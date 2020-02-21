@@ -17,6 +17,7 @@ A cache is used to speed up calls. Users are able to set the amount of time an o
 ## Usable Methods
  Here are all the usable methods in this wrapper.
  ```
+    long getCacheTime()
     void changeCacheTimeAmount(long seconds);
     NamedAPIResourceList getBerryList(int offset, int limit);
     NamedAPIResourceList getBerryFirmnessList(int offset, int limit);

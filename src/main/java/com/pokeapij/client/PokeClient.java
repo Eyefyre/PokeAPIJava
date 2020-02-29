@@ -57,13 +57,13 @@ public class PokeClient implements PokeClientInterface {
 
     private Object getObject(String path, String name, String objectName) {
         String fullpath = path + "/" + name;
-        return this.useService(path, fullpath, objectName);
+        return this.useService(fullpath, fullpath, objectName);
 
     }
 
     private Object getObject(String path, int id, String objectName) {
         String fullpath = path + "/" + id;
-        return this.useService(path, fullpath, objectName);
+        return this.useService(fullpath, fullpath, objectName);
     }
 
     @Override

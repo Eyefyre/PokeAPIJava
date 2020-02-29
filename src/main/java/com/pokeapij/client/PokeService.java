@@ -90,6 +90,7 @@ public class PokeService implements PokeServiceInterface {
         JsonElement jsonelement = JsonParser.parseString(jsonString);
         if (jsonelement.isJsonObject()) {
             JsonObject jsonObject = jsonelement.getAsJsonObject();
+           
             switch (Objectname) {
                 case "NamedAPIResourceList":
                     resource = gson.fromJson(jsonObject.toString(), NamedAPIResourceList.class);
